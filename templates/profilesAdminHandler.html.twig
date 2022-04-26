@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('asset/css/profilesAdminHandler.css') }}">
+<main>
+           {% for user in users %}
+
+               <div class="users">
+                {{ user.lastname }}
+                {{ user.email }}
+
+                   {% if is_granted('ROLE_ADMIN') %} <button  class="delete">Supprimer utilisateur</button>{% endif %}
+                        <div class="modal">
+                       <a href="{{ path('remove_user', {'id':user.id } ) }}" class="deleteUser">Supprimer utilisateur</a>
+                       <button class="cancel">Annuler</button>
+                   </div>
+               </div>
+                {% endfor %}
+</main>
+    <script src="{{ asset("asset/js/modalAdminDeleteUser.js") }}"></script>
+{% endblock %}

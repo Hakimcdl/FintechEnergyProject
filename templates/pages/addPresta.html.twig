@@ -1,0 +1,14 @@
+{% block body %}
+
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
+
+<body>
+<h1>Ajouter une prestation</h1>
+    <span>
+        {{ form(formPrestation) }}
+    </span>
+</body>
+{% endblock %}

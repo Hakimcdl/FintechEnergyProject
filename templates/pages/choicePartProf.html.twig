@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('asset/css/header.css') }}">
+<link rel="stylesheet" href="{{ asset('asset/css/footer.css') }}">
+<link rel="stylesheet" href="{{ asset('asset/css/choicePartProf') }}">
+
+<body>
+    <section>
+        <div class="choice">Êtes vous un particulier ou un professionnel ?</div>
+    </section>
+
+    <section class="boxChoice">
+        <div class="part">Particulier</div>
+        <a href="{{ path('addFormular', {'FormulaireStatus': 'particulier', 'titlePresta' : titlePresta}) }}">Profil Particulier</a>
+        <div class="prof">Professionnel</div>
+        <a href="{{ path('addFormular', {'FormulaireStatus': 'professionnel', 'titlePresta' : titlePresta}) }}">Profil Professionnel</a>
+    </section>
+</body>
+
+{% endblock %}

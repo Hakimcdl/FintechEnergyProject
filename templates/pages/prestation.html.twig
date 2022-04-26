@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
+
+<body>
+<section class="presentation">
+    <div class="rubriquePrestation">Voici notre fiche technique d'isolation :</div>
+    <img src="{{ asset('asset/img/img_operation/'~presta.img.title) }}" alt="image d'opérations énergétiques">
+
+    <article class="isolation">
+        <h1>{{ presta.title }}</h1>
+        <div class="firstPrestation">
+            <span><img src="#" alt=""></span>
+            <p>{{ presta.description }}</p>
+            <a href="{{ path('choicePartProf', {'titlePresta': presta.title}) }}">Contactez-nous</a>
+        </div>
+    </article>
+</section>
+</body>
+{% endblock %}

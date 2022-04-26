@@ -1,0 +1,17 @@
+{% extends ('base.html.twig') %}
+
+{% block title %} Voir Un Profil {% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('asset/css/profilesAdminHandler.css') }}">
+Nom: {{ user.lastname }}
+Adrese email: {{ user.email }}
+    <button  class="delete">Supprimer utilisateur</button>
+    <div class="modal">
+        <a href="{{ path('remove_user_id', {'id':user.id } ) }}" class="deleteUser">Supprimer utilisateur</a>
+        <button class="cancel">Annuler</button>
+    </div>
+
+    <script src="{{ asset("asset/js/modalAdminDeleteUser.js") }}"></script>
+
+{% endblock %}

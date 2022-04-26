@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.rubriquePrestations{
+    width: 70%;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    background-color: #D3EEE0;
+}
+.sixprestations{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.myPrestations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.isolation{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.isoP{
+    margin: 20px 20px;
+}
+.presta{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+}
+article > h1{
+    text-align: center;
+    margin: 30px;
+}
+article {
+    width: 75%;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    position: relative;
+}
+.prestaTxtBtn{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+.prestaTxtBtn > p {
+    margin-bottom: 15px;
+}
+.prestaTxtBtn > a{
+    margin-bottom: 15px;
+}
+.modal {
+    width: 500px;
+    height: 200px;
+    background-color: rgb(128 128 128 / 30%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+
+}
+.displayBlock{
+    display: block!important;
+}

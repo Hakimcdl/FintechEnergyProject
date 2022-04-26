@@ -1,0 +1,23 @@
+<body>
+    <div class="firstnav">
+        <span class="logo"><img src="{{ asset('asset/img/img_article/logomaisoncdc.jpg') }}" alt=""></span>
+        <p class="slogan">Économisez de l'énergie, votre argent...et du temps</p>
+        <p class="slogan">Économisez de l'énergie, votre argent...et du temps</p>
+        <ul class="logo1">
+            <li><img src="{{ asset('asset/img/img_article/facebooklogo.png') }}" alt="logo user"></li>
+            <li><img src="{{ asset('asset/img/img_article/instagramlogo.png') }}" alt="logo user"></li>
+            <li><img src="{{ asset('asset/img/img_article/linkedinlogo.png') }}" alt="logo user"></li>
+            <li><a href="{{ path('app_login') }}"><img src="{{ asset('asset/img/img_article/userlogo.png') }}" alt="logo user"></a></li>
+        </ul>
+    </div>
+    <nav class="secondnav">
+        <ul>
+            <li><a href="{{ path('home') }}">Accueil</a></li>
+            <li><a href="{{ path('prestations') }}">Nos prestations</a></li>
+            {% if app.user == true %}<li><a href="{{ path('view_profil') }}">Votre profil</a></li> {% else %}
+            <li><a href="{{ path('app_register') }}">S'inscrire</a> {% endif %}
+            <li><a href="{{ path('demandeContact') }}">Contact</a></li>
+            {% if is_granted('ROLE_ADMIN') %}<li><a href="{{ path('view_Profiles') }}">Gestion Profils</a></li>{% endif %}
+        </ul>
+    </nav>
+</body>

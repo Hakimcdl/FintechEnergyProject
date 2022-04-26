@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
+
+    <h1>Page de création de profil</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.lastname) }}
+        {{ form_row(registrationForm.email) }}
+
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}

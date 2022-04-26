@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type : none;
+}
+nav{
+    background-color: #ECF5F7;
+}

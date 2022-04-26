@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type : none;
+}
+nav{
+    background-color: #ECF5F7;
+}
+.firstnav{
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #ECF5F7;
+}
+.logo{
+    width: 30%;
+}
+.logo1 > li > img{
+    margin: 15px;
+}
+.slogan{
+    width: 70%;
+}

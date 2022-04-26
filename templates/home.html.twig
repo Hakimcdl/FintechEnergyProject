@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+{% block title %}home{% endblock %}
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
+<body>
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="{{ asset('asset/img/img_article/1maison-connectee.jpg') }}" alt="">
+
+        <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="{{ asset('asset/img/img_article/1maison-connectee.jpg') }}" alt="">
+        <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="{{ asset('asset/img/img_article/1maison-connectee.jpg') }}" alt="">
+
+        <div class="text">Caption Three</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+    <section class="presentation">
+        <h1>Présentation Entreprise</h1>
+        <span><img src="{{ asset('asset/img/img_article/1maison-connectee.jpg') }}" alt=""></span>
+        <div class="rubriquePrime">Prime et Subvention (lien gouvernemental)</div>
+    </section>
+
+    <section class="prestation">
+        <h2>Notre métier, nos prestations:</h2>
+        <div class="prestaIso">
+            {% for prestation in prestations %}
+                <article>
+                    <h3>{{ prestation.title }}</h3>
+                    <span><a href="{{ path('prestation', {'title': prestation.title}) }}">
+                            <img src="{{ asset('asset/img/img_article/vertmaison.png') }}" alt=""></a></span>
+                </article>
+            {% endfor %}
+            <button class="buttonPrestations"><a href="{{ path('prestations') }}">Voir toutes nos prestations</a></button>
+        </div>
+        <span>
+            <img src="../public/asset/img/img_article/1maison-connectee.jpg" alt="">
+        </span>
+    </section>
+
+    <section class="fourArticles">
+        <article class="firstArticle">
+                <span><img src="../public/asset/img/img_article/accompagnement-de-projet.png" alt=""></span>
+                <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
+                    Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
+        </article>
+
+        <article class="secondArticle">
+                <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
+                    Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
+                <span><img src="../public/asset/img/img_article/2-systeme-de-stockage.png" alt=""></span>
+        </article>
+
+        <article class="thirdArticle">
+                <span><img src="../public/asset/img/img_article/3-monitoring-gestion.png" alt=""></span>
+                <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
+                    Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
+        </article>
+
+        <article class="fourthArticle">
+                <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
+                    Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
+                <span><img src="../public/asset/img/img_article/4-offres-dhebergement-de-data.png" alt=""></span>
+        </article>
+    </section>
+<script src="{{ asset("asset/js/slider.js") }}"></script>
+</body>
+{% endblock %}
