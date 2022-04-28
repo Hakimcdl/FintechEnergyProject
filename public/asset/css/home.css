@@ -1,6 +1,17 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
 }
 .presentation{
     display: flex;
@@ -12,24 +23,41 @@
     height: 300px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: #D3EEE0;
 }
 .prestation{
-    width: 70%;
-    margin: 0 auto;
+    width: 90%;
+    margin: 50px auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 .prestaIso{
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 40px;
+}
+div > article{
+    margin: 15px 0px;
 }
 .buttonPrestations{
-    background-color: #2F9116;
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: flex-end;
+}
+.buttonPrestations > button{
+    border: none;
+}
+.buttonPrestations > button > a{
+    text-decoration: none;
+    list-style: none;
+    color: #2F9116;
 }
 article{
     width: 33%;
@@ -37,6 +65,15 @@ article{
     flex-direction: column;
     align-items: center;
 }
+.bandeImage{
+    width: 100%;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../img/img_fond/paysage_pomme1.jpg");
+}
+
 .fourArticles{
     width: 70%;
     margin: 0 auto;
@@ -45,36 +82,69 @@ article{
     flex-direction: column;
     align-items: center;
 }
+.presentationSection{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 .firstArticle {
     display: inline-flex;
     flex-direction: revert;
+    justify-content: center;
+}
+.imageHome{
+    transition: transform .1s;
+}
+.imageHome:hover{
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+.rubriquePara{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 50px;
+}
+.para1{
+    display: flex;
+    margin: 20px;
 }
 .secondArticle {
     display: inline-flex;
     flex-direction: revert;
+    justify-content: center;
 }
 .thirdArticle {
     display: inline-flex;
     flex-direction: revert;
+    justify-content: center;
 }
 .fourthArticle {
     display: inline-flex;
     flex-direction: revert;
+    justify-content: center;
 }
 p{
     margin: 0 50px;
 }
+
 .mySlides {display: none}
 img {vertical-align: middle;}
 
-.mySlides > img{
-    width: 80%!important;
-}
+    .mySlides > img{
+        width: 800px!important;
+        height: 500px!important;
+
+        }
     /* Slideshow container */
 .slideshow-container {
-    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    margin: auto;
 }
 
 /* Next & previous buttons */
@@ -154,4 +224,18 @@ img {vertical-align: middle;}
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
+}
+@media only screen and (max-width: 680px) {
+    .rubriquePara{
+        margin: 0!important;
+    }
+    .imageHome{
+        width: 200px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .mySlides > img {
+        width: 100% !important;
+
+    }
 }

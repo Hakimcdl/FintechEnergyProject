@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Voir les prestations{% endblock %}
 {% block body %}
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
@@ -18,38 +18,45 @@
     <div class="isoP">Isolation des planchers</div>
     <div class="isoP">Fenêtre ou porte-fenêtre</div>
     <div class="isoP">Fermeture de fenêtres</div>
+    <div class="isoP">Panneaux solaires</div>
 </section>
+
 <main>
 <section class="myPrestations">
      {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('addPresta') }}">Créer une prestation</a> {% endif %}
-    {% for prestation in prestations %}
-    <article>
 
-        <h1>{{ prestation.title }}</h1>
+     {% for prestation in prestations %}
+
+    <article>
+        <h1 class="titleItem">{{ prestation.title }}</h1>
+
         <div class="presta">
 
-        <img src="{{ asset('asset/img/img_operation/'~prestation.img.title) }}" alt="image d'opérations énergétiques">
-        <div class="prestaTxtBtn">
-            <p>{{ prestation.description }}</p>
-            <a href="{{ path('prestation', {'title': prestation.title}) }}">Voir notre prestation</a>
-        </div>
+            <img class="imageOperations" src="{{ asset('asset/img/img_operation/'~prestation.img.title) }}" alt="image d'opérations énergétiques">
+
+            <div class="prestaTxtBtn">
+                <p>{{ prestation.description }}</p>
+                <a href="{{ path('prestation', {'title': prestation.title}) }}">Voir notre prestation</a>
+            </div>
+
         </div>
 
-        <div class="firstPrestation">
+        <div class="adminControl">
             {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('updatePresta', {'title': prestation.title}) }}">Modifier Prestation</a>{% endif %}
-                {% if is_granted('ROLE_ADMIN') %} <button class="del">Supprimer prestation</button>{% endif %}
-
+            {% if is_granted('ROLE_ADMIN') %} <button class="del">Supprimer prestation</button>{% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="modal">
+                    <button class="cancel" >Annuler</button>
+                    {{ dump(prestation.title) }}
+                    {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('removePresta', {'title': prestation.title}) }}">Supprimer Prestation</a>{% endif %}
+                </div>
+            {% endif %}
         </div>
     </article>
-        <div class="modal">
-            <button class="cancel" >Annuler</button>
-        {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('removePresta', {'title': prestation.title}) }}" class="ok">Supprimer Prestation</a>{% endif %}
-        </div>
             {% endfor %}
 </section>
 </main>
+
 </body>
-
         <script src="{{ asset("asset/js/modal.js") }}"></script>
-
 {% endblock %}

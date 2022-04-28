@@ -1,22 +1,26 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Choisir son profil{% endblock %}
 {% block body %}
 <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-<link rel="stylesheet" href="{{ asset('asset/css/header.css') }}">
-<link rel="stylesheet" href="{{ asset('asset/css/footer.css') }}">
-<link rel="stylesheet" href="{{ asset('asset/css/choicePartProf') }}">
+<link rel="stylesheet" href="{{ asset('asset/css/choicePartProf.css') }}">
 
 <body>
-    <section>
+    <main>
         <div class="choice">Êtes vous un particulier ou un professionnel ?</div>
-    </section>
 
-    <section class="boxChoice">
-        <div class="part">Particulier</div>
-        <a href="{{ path('addFormular', {'FormulaireStatus': 'particulier', 'titlePresta' : titlePresta}) }}">Profil Particulier</a>
-        <div class="prof">Professionnel</div>
-        <a href="{{ path('addFormular', {'FormulaireStatus': 'professionnel', 'titlePresta' : titlePresta}) }}">Profil Professionnel</a>
-    </section>
+        <section class="boxChoice">
+            <div class="part">
+            <a href="{{ path('addFormular', {'FormulaireStatus': 'particulier', 'titlePresta' : titlePresta}) }}">
+                <img src="{{ asset('asset/img/img_fond/image-particulier.png') }}" alt="image particulier"></a>
+            </div>
+
+            <div class="prof">
+            <a href="{{ path('addFormular', {'FormulaireStatus': 'professionnel', 'titlePresta' : titlePresta}) }}">
+                <img src="{{ asset('asset/img/img_fond/image-federationProf.png') }}" alt="image professionnelle"></a>
+            </div>
+
+        </section>
+    </main>
 </body>
 
 {% endblock %}

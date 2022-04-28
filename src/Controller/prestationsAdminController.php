@@ -32,10 +32,9 @@ class prestationsAdminController extends AbstractController
             'formPrestation' => $formPrestation->createView()
         ]);
     }else{
-            dd('coucou');
-            // return $this->render('security/home.html.twig');
+            //dd('coucou');
+            return $this->render('security/home.html.twig');
         }
-
     }
 
     #[Route('/modifier/{title}', name: 'updatePresta', methods: ['GET', 'POST'])]
@@ -62,7 +61,6 @@ class prestationsAdminController extends AbstractController
         $deletePresta = $prestationRepository->findOneBy(['title' => $title]);
         $prestationRepository->remove($deletePresta);
         }
-
         return $this->redirectToRoute('prestations');
     }
 }

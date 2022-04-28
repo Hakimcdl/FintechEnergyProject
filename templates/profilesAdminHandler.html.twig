@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Gestion des profils{% endblock %}
+
 {% block body %}
     <link rel="stylesheet" href="{{ asset('asset/css/profilesAdminHandler.css') }}">
 <main>
@@ -8,12 +10,12 @@
                <div class="users">
                 {{ user.lastname }}
                 {{ user.email }}
-
-                   {% if is_granted('ROLE_ADMIN') %} <button  class="delete">Supprimer utilisateur</button>{% endif %}
+                   {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('update_user', {'id': app.user.id}) }}">Modifier l'utilisateur</a>{% endif %}
+                   {% if is_granted('ROLE_ADMIN') %} <button  class="del">Supprimer utilisateur</button>{% endif %}
                         <div class="modal">
-                       <a href="{{ path('remove_user', {'id':user.id } ) }}" class="deleteUser">Supprimer utilisateur</a>
-                       <button class="cancel">Annuler</button>
-                   </div>
+                            <a href="{{ path('remove_user', {'id':user.id } ) }}" class="deleteUser">Supprimer utilisateur</a>
+                            <button class="cancel">Annuler</button>
+                        </div>
                </div>
                 {% endfor %}
 </main>

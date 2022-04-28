@@ -3,23 +3,20 @@
     padding: 0;
 }
 .choice{
-    width: 70%;
-    height: 100px;
-    margin: 0 auto;
+    width: 50%;
+    font-size: 40px;
+    padding: 50px;
+    margin: 40px auto;
     display: flex;
     justify-content: center;
-    background-color: #D3EEE0;
 }
 .boxChoice{
     display: flex;
     justify-content: space-evenly;
-    background-color: #D3EEE0;
 }
 .part{
-    width: 100px;
-    height: 100px;
+    padding: 70px;
 }
 .prof{
-    width: 100px;
-    height: 100px;
+    padding: 70px;
 }

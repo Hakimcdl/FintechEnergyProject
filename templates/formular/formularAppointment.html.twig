@@ -1,13 +1,21 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Formulaire rendez-vous{% endblock %}
 {% block body %}
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/header.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/formularAppointment.css') }}">
 
-    <h1>Formulaire d'enregistrement de l'opération énergétique et prise de RDV pour {{ status }}</h1>
+    <body>
+        <article>
 
-    {{ form(formAppointment) }}
+            <div class="titleAppointement">
+                <h1>Veuillez remplir le formulaire d'enregistrement de l'opération énergétique et prise de RDV pour {{ status }}</h1>
+            </div>
+
+            <div class="formularAppointment">
+                {{ form(formAppointment) }}
+            </div>
+
+        </article>
+    </body>
 
 {% endblock %}

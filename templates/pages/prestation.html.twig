@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Voir une prestation{% endblock %}
 {% block body %}
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/header.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/prestation.css') }}">
 
 <body>
-<section class="presentation">
-    <div class="rubriquePrestation">Voici notre fiche technique d'isolation :</div>
-    <img src="{{ asset('asset/img/img_operation/'~presta.img.title) }}" alt="image d'opérations énergétiques">
+<section>
+    <article class="presentation">
+        <div class="rubriquePrestation">Voici notre fiche technique d'isolation :</div>
+    </article>
 
     <article class="isolation">
         <h1>{{ presta.title }}</h1>
-        <div class="firstPrestation">
-            <span><img src="#" alt=""></span>
+        <div class="Prestation">
+            <img src="{{ asset('asset/img/img_operation/'~presta.img.title) }}" alt="image d'opérations énergétiques">
             <p>{{ presta.description }}</p>
             <a href="{{ path('choicePartProf', {'titlePresta': presta.title}) }}">Contactez-nous</a>
         </div>

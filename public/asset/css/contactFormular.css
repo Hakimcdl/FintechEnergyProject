@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    border: 5px solid red;
+    border-radius: 10px;
+    background-color: rgb(41,126,186);
+}
+.titleContact{
+    font-weight: bold;
+}
+.formulaireContact{
+    margin: 50px auto;
+    padding: 30px 30px;
+    border: 5px solid red;
+    border-radius: 10px;
+    background-color: rgb(41,126,186);
+}

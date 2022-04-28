@@ -1,14 +1,15 @@
 <body>
     <div class="firstnav">
-        <span class="logo"><img  src="assets/img/logomaisoncdc.jpg" alt=""></span>
+        <span class="logo"><a href="{{ path('home') }}"><img src="{{ asset('asset/img/img_article/logomaisonrenov.png') }}" alt=""></a></span>
         <p class="slogan">Économisez de l'énergie, votre argent...et du temps</p>
+        <p class="slogan">Vos économies ont de l'énergie !</p>
     </div>
-    <nav>
+    <nav class="secondnav">
         <ul>
-            <li>Information</li>
-            <li>Agences</li>
-            <li>Service client</li>
-            <li>Mention légale</li>
+            <li><a href="{{ path('information') }}">Information</a></li>
+            <li><a href="{{ path('agences') }}">Agences</a></li>
+            <li><a href="{{ path('serviceclient') }}">Service client</a></li>
+            <li><a href="{{ path('mentionlegales') }}">Mention légales</a></li>
         </ul>
     </nav>
 </body>

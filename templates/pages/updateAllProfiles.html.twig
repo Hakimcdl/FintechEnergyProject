@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mettre à jour votre profil{% endblock %}
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+
+    <body>
+
+    <h1>Modifier le profil des utilisateurs</h1>
+
+    <span>
+        {{ form_start(editFormUser) }}
+        {{ form_row(editFormUser.email) }}
+        {{ form_row(editFormUser.lastname) }}
+        {{ form_row(editFormUser.plainPassword) }}
+        <input type="submit" value="Envoyer">
+        {{ form_end(editFormUser) }}
+    </span>
+
+    </body>
+{% endblock %}

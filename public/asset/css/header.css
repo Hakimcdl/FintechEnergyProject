@@ -2,26 +2,103 @@
     margin: 0;
     padding: 0;
 }
+.firstnav{
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ECF5F7;
+}
 ul{
     display: flex;
     justify-content: space-around;
-    list-style-type : none;
+}
+nav > ul > li > a {
+    text-decoration: none;
+    color: #2F9116;
+    font-size: large;
+    font-weight: bold;
 }
 nav{
     background-color: #ECF5F7;
 }
-.firstnav{
-    height: 100px;
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #ECF5F7;
-}
 .logo{
     width: 30%;
+    margin: 10px;
 }
-.logo1 > li > img{
+.logo1 > li > a{
     margin: 15px;
 }
 .slogan{
     width: 70%;
+    color: #2F9116;
+}
+.secondnav{
+    height: 40px;
+}
+.burger {
+    width: 35px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    display: none;
+    cursor: pointer;
+}
+.divBurger {
+    width: 42px;
+    background-color: #2F9116;
+    height: 5px;
+    margin: 9px;
+}
+.modalBurger {
+    position: absolute;
+    padding: 31px;
+    background-color: #ECF5F7;
+    top: 10%;
+    right: 54%;
+    width: 234px;
+    height: 46vh;
+    z-index: 1;
+    display: none;
+}
+.ulBurger{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+.ulBurger > li {
+    margin: 10px;
+}
+.ulBurger > li > a {
+    text-decoration: none;
+    color: #2F9116;
+}
+.displayBlock{
+    display: block;!important;
+}
+@media only screen and (max-width: 1280px){
+  .slogan{
+      font-size: 11px;
+      text-align: center;
+  }
+
+}
+@media only screen and (max-width: 900px){
+    h1{
+        font-size: 18px;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 749px){
+    .slogan{
+        display: none!important;
+    }
+    .secondnav{
+        display: none;
+    }
+    .burger{
+        display: block!important;
+    }
 }

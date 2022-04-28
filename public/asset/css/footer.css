@@ -2,11 +2,25 @@
     margin: 0;
     padding: 0;
 }
+nav{
+    background-color: #ECF5F7;
+    height: 80px;
+}
 ul{
     display: flex;
     justify-content: space-around;
     list-style-type : none;
 }
-nav{
-    background-color: #ECF5F7;
+nav > ul > li > a {
+    text-decoration: none;
+    color: #2F9116;
+    font-size: large;
+    font-weight: bold;
+}
+.secondnav{
+    height: 40px;
+}
+slogan{
+    width: 70%;
+    color: #2F9116;
 }

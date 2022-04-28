@@ -1,9 +1,11 @@
-let delet = document.querySelector('.delete');
-let modal = document.querySelector('.modal');
-let cancel = document.querySelector('.cancel');
-delet.addEventListener('click', function (){
-    modal.classList.add('displayBlock');
-})
-cancel.addEventListener('click', function (){
-    modal.classList.remove('displayBlock');
+let del = document.querySelectorAll('.del');
+
+del.forEach(function(delBtn){
+    delBtn.addEventListener('click', function(){
+        let modal = delBtn.nextElementSibling;
+        modal.classList.add('displayBlock');
+        modal.querySelector('.cancel').addEventListener('click', function (){
+            modal.classList.remove('displayBlock');
+        })
+    })
 })

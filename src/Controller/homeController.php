@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Form\RegistrationFormType;
 use App\Repository\PrestationRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class homeController extends AbstractController
@@ -30,11 +32,25 @@ class homeController extends AbstractController
       ]);
     }
 
+    #[Route('/modifierProfil/{id}', name: 'updateProfil', methods: ['GET', 'POST'])]
+    public function updateProfil(UserRepository $userRepository, Request $request, $id)
+    {
+            $updateUser = $userRepository->findOneBy(['id' => $id]);
+            $editFormUser = $this->createForm(RegistrationFormType::class, $updateUser);
+            $editFormUser ->handleRequest($request);
+
+            if ($editFormUser->isSubmitted() && $editFormUser->isValid()) {
+                $userRepository ->add($updateUser);
+                return $this->redirectToRoute('view_profil');
+        }
+            return $this->render('pages/updateOneProfile.html.twig',[
+                    'editFormUser' => $editFormUser->createview()
+                ]);
+    }
 
     #[Route('/profil/remove/{id}', name: 'remove_user_id' )]
     public function removeUserId(UserRepository $userRepository, $id)
     {
-
         // $this va chercher la fonction get user par son id ou va recuperer le roles de l'admin
         if ($this->getUser()->getId() == $id ) {
             // recupère les id de tout les membres grace a la table user
@@ -47,8 +63,4 @@ class homeController extends AbstractController
         }
                 return $this->redirectToRoute('home');
             }
-
-
-
-
 }

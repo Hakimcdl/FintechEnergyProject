@@ -18,6 +18,7 @@ class contactFormularController extends AbstractController
 
         return $this->render('contactFormular.html.twig');
     }
+
     #[Route('/demandeContact', name: 'demandeContact', methods: ['GET', 'POST'])]
     public function addContact (ContactRepository $contactRepository, UserRepository $userRepository, Request $request)
     {
