@@ -31,6 +31,9 @@ class Contact
     #[ORM\Column(type: 'string', length: 255)]
     private $lastname;
 
+    #[ORM\OneToOne(targetEntity: user::class, cascade: ['persist', 'remove'])]
+    private $userContact;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +107,18 @@ class Contact
     public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getUserContact(): ?user
+    {
+        return $this->userContact;
+    }
+
+    public function setUserContact(?user $userContact): self
+    {
+        $this->userContact = $userContact;
 
         return $this;
     }

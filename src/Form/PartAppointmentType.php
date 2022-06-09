@@ -34,7 +34,6 @@ class PartAppointmentType extends AbstractType
             ->add('surface')
             ->add('mail')
             ->add('phone')
-            ->add('requestDate')
             ->add('callBackRequest')
             ->add('note')
             ->add('envoyer', SubmitType::class)

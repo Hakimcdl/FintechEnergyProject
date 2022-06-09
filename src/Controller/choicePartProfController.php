@@ -55,10 +55,17 @@ class choicePartProfController extends AbstractController
                 'status' => $FormulaireStatus
             ]);
         }
-        return $this->render('formular/formularAppointment.html.twig', [
-            'formAppointment' => $formAppointment->createView(),
-            'status' => $FormulaireStatus
-        ]);
+        if($formType === PartAppointmentType::class){
+            return $this->render('formular/formularAppointmentPart.html.twig', [
+                'formAppointment' => $formAppointment->createView(),
+                'status' => $FormulaireStatus
+            ]);
+        }else{
+            return $this->render('formular/formularAppointmentPro.html.twig', [
+                    'formAppointment' => $formAppointment->createView(),
+                    'status' => $FormulaireStatus
+            ]);
+        }
     }
 
     #[Route('{titlePresta}/{FormulaireStatus}/formulaire/resume', name: 'resume', methods: ['GET', 'POST'])]

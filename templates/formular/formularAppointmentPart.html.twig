@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block title %}Formulaire rendez-vous{% endblock %}
+{% block body %}
+    <body>
+            <div class="titleAppointement">
+                <h1>Veuillez remplir le formulaire d'enregistrement de l'opération énergétique et prise de RDV pour {{ status }}</h1>
+            </div>
+
+            <div class="formularAppointment">
+
+                {{ form_start(formAppointment) }}
+                    {{ form_row(formAppointment.prestationaccessupdate,{
+                        label: 'Choisissez vos opérations énergétiques :',
+                        'attr':{'class': 'prestationaccessupdateField'}
+                    }) }}
+                    {{ form_row(formAppointment.residencyaccessupdate,{
+                        label: 'Choisissez votre mode dhabitation :',
+                        'attr':{'class': 'residencyaccessupdateField'}
+                    }) }}
+                    {{ form_row(formAppointment.firstname,{
+                        label: 'Prénom',
+                        'attr':{'class': 'firstnameField form-control'}
+                    }) }}
+                    {{ form_row(formAppointment.lastname,{
+                        label: 'Nom',
+                        'attr':{'class': 'lastnameField form-control'}
+                    }) }}
+                    {{ form_row(formAppointment.postalAdress,{
+                            label: 'Adresse postale',
+                            'attr':{'class': 'postalAdressField form-control'}
+                        }) }}
+                    {{ form_row(formAppointment.postalCode,{
+                        label: 'Code postale',
+                        'attr':{'class': 'postalCodeField form-control'}
+                    }) }}
+                    {{ form_row(formAppointment.surface,{
+                        label: 'Surface',
+                        'attr':{'class': 'surfaceField form-control'}
+                    }) }}
+                    {{ form_row(formAppointment.mail,{
+                        label: 'Courriel',
+                        'attr':{'class': 'mailField form-control'}
+                    }) }}
+                    {{ form_row(formAppointment.phone,{
+                        label: 'Téléphone',
+                        'attr':{'class': 'phoneField form-control'}
+                    }) }}
+                    {{ form_row(formAppointment.callBackRequest,{
+                        label: 'Demande de rappel',
+                        'attr':{'class': 'callBackRequestField form-control'}
+                    }) }}
+                    {{ form_row(formAppointment.note,{
+                        label: 'Remarque',
+                        'attr':{'class': 'noteField form-control'}
+                    }) }}
+                {{ form_end(formAppointment) }}
+            </div>
+    </body>
+
+{% endblock %}

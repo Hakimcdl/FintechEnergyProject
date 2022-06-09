@@ -16,7 +16,7 @@ class profilesAdminController extends AbstractController
     public function viewProfiles(UserRepository $userRepository)
     {
 
-        // recupere tout les utilisateurs de la table UserRepository
+        // récupère tout les utilisateurs de la table UserRepository
         $users = $userRepository->findAll();
         return $this->render('profilesAdminHandler.html.twig', [
             'users' => $users

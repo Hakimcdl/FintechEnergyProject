@@ -1,61 +1,70 @@
 {% extends 'base.html.twig' %}
 {% block title %}Accueil{% endblock %}
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
 <body>
-<h1>FINTECH ENERGY
-    MAÎTRISONS ENSEMBLE L'ÉNERGIE</h1>
-<div class="slideshow-container">
-
-    <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="{{ asset('asset/img/img_fond/paysage_pomme.jpg') }}" alt="">
+    <h1>FINTECH ENERGY</h1>
+    <h2 class="subTitle">"MAÎTRISONS ENSEMBLE L'ÉNERGIE"</h2>
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner bg-secondary my-5" style="height:500px">
+                <div class="carousel-item active py-auto" style="height:500px">
+                    <img src="asset/img/img_fond/bandeau-energie-verte.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item py-auto" style="height:500px">
+                    <img src="asset/img/img_fond/paysage_pomme.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item py-auto" style="height:500px">
+                    <img src="asset/img/img_fond/paysagee_oliènne.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item py-auto" style="height:500px">
+                    <img src="asset/img/img_fond/paysage_greenhouse.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item py-auto" style="height:500px">
+                    <img src="asset/img/img_fond/bandeau_energie.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
 
-    <div class="mySlides fade">
-        <div class="numbertext">2 / 3</div>
-        <img src="{{ asset('asset/img/img_article/paysage_pomme.jpg') }}" alt="">
-        <div class="text">Caption Two</div>
-    </div>
-
-    <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
-        <img src="{{ asset('asset/img/img_article/paysage_pomme.jpg') }}" alt="">
-
-        <div class="text">Caption Three</div>
-    </div>
-
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
-    <section class="presentation">
-        {#  <span><img src="{{ asset('asset/img/img_article/1maison-connectee.jpg') }}" alt=""></span>#}
-        <div class="rubriquePrime">
-            <h2>Prime et Subvention (lien gouvernemental)</h2>
-            <p>What is Lorem Ipsum?
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <section class="presentation container">
+        <div class="col-12">
+            <div class="rubriquePrime text-center">
+                <h2>La stratégie nationale de transition écologique vers un développement durable :
+                    <br>Prime et Subvention</h2>
+                <p class="col-10">La loi de transition énergétique pour une croissance verte crée un élan d’écologie positive qui lève les freins, libère les initiatives et donne à chacun le pouvoir d’agir.
+                    Ce sont tous les acteurs qui feront progressivement émerger un nouveau modèle de société qui allie progrès économique, écologique et humain.
+                    Cette dynamique va être amplifiée par la stratégie nationale de transition écologique vers un développement durable.
+                    Cette troisième stratégie innove par son ambition de définir un modèle de société plus sobre.
+                    Ce nouveau modèle repose sur des leviers existants à amplifier et des opportunités à développer.
+                </p>
+                <div class="d-flex">
+                    <a href="pages/helpRenovation.twig"><button type="button" class="btn btn-success m-3">Information prime</button></a>
+                    <a href="https://www.ecologie.gouv.fr/operations-standardisees-deconomies-denergie"><button type="button" class="btn btn-success m-3">Liste opération</button></a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="prestation">
-        <h2>Notre métier, nos prestations:</h2>
-        <div class="prestaIso">
+    <section class="ourJob container">
+        <h2>Notre métier, nos prestations :</h2>
+        <div class="ourPrestation">
             {% for prestation in prestations %}
-                <article>
+                <article class ="card allcards">
                     <h3>{{ prestation.title }}</h3>
                     <span><a href="{{ path('prestation', {'title': prestation.title}) }}">
                             <img src="{{ asset('asset/img/img_article/vertmaison.png') }}" alt="icons"></a></span>
@@ -65,81 +74,77 @@
     </section>
 
         <div class="buttonPrestations">
-            <button><a href="{{ path('prestations') }}">Voir toutes nos prestations ></a></button>
+            <button><a class="btn btn-success" href="{{ path('prestations') }}">Voir toutes nos prestations ></a></button>
         </div>
 
-        <div class="bandeImage">
-            {#  <img src="../public/asset/img/img_fond/paysage_pomme1.jpg" alt="image gestion maison connectée">#}
+        <div class="filtre">
+            <div class="bandeImage">
+            </div>
         </div>
 
-
-    <section class="fourArticles">
-        <div class="presentationSection">
+    <section class="fourArticles container">
+        <div class="solutions col-12 my-5">
+            <div class="rubriquePrime text-center">
             <h2>LES SOLUTIONS</h2>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p>L’écologie, c’est avant tout la défense des éco-systèmes, composés par une multitude d’organismes. Pour adopter une démarche écologique, il est important de comprendre l’équilibre de la relation entre l’homme et la nature, de l’aimer et de le protéger."</p>
+            </div>
         </div>
-        <article class="firstArticle">
+        <article class="eachArticle articleFirst col-12">
             <div>
                 <span><img class="imageHome" src="../public/asset/img/img_article/accompagnement-de-projet.png" alt=""></span>
             </div>
             <div class="rubriquePara">
-                <h3>TITRE DE MA DIV</h3>
+                <h3>INDIVIDUALITÉS ET INTÉRÊT COLLECTIF</h3>
                 <div class="para1">
-                    <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
-                        Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
-                    <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
-                        Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
+                    <p class="subParaBis">Parce que nous pensons que seul on va plus vite mais ensemble on va plus loin, nous favorisons la force de proposition, l’autonomie et l’intelligence collective pour mener nos actions.</p>
+                    <p class="subParaterce">Se réunir est un début, rester ensemble est un progrès, travailler ensemble est la réussite.</p>
                 </div>
             </div>
+            <span class="deroulant"><i class="fa-solid fa-down"></i></span>
         </article>
 
-        <article class="secondArticle">
+        <article class="eachArticle articleSecond col-12">
             <div class="rubriquePara">
-                <h3>TITRE DE MA DIV</h3>
+                <h3>TERRITOIRES ET TRANSITIONS</h3>
                 <div class="para1">
-                    <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
-                        Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
-                    <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
-                        Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
+                    <p class="subParaBis">Parce que nous sommes proches des territoires et de leurs habitants, nous déployons avec eux les innovations qui permettent de relever les défis de la transition énergétique.</p>
+                    <p class="subParaTerce">Dans un environnement qui change, il n'y a pas de plus grand risque que de rester immobile. La nature est bien faite, elle se soigne et se régénère, à condition qu’on la ménage. C’est bien entendu plus facile à dire qu’à faire, alors faisons le.</p>
                 </div>
             </div>
                 <div>
                 <span><img class="imageHome" src="../public/asset/img/img_article/2-systeme-de-stockage.png" alt=""></span>
                 </div>
+            <span class="deroulant"><i class="fa-solid fa-down"></i></span>
         </article>
 
-        <article class="thirdArticle">
+        <article class="eachArticle articleFirst col-12">
             <div>
                 <span><img class="imageHome" src="../public/asset/img/img_article/3-monitoring-gestion.png" alt=""></span>
             </div>
             <div class="rubriquePara">
-                <h3>TITRE DE MA DIV</h3>
+                <h3>ENVIRONNEMENT ET ÉNERGIES</h3>
                 <div class="para1">
-                    <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
-                        Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
-                    <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
-                        Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
+                    <p class="subParaBis">Parce que respecter notre environnement est une nécessité, nous contribuons avec conviction à l’exemplarité environnementale, en agissant en faveur du développement des énergies renouvelables et de la sobriété énergétique.</p>
+                    <p class="subParaterce">Parce que rien n’est plus précieux que de préparer le meilleur des futurs, nous nous appuyons en permanence sur le savoir-faire d’une entreprise centenaire et bénéficions de l’agilité d’une structure à taille humaine.</p>
                 </div>
             </div>
+            <span class="deroulant"><i class="fa-solid fa-down"></i></span>
         </article>
 
-        <article class="fourthArticle">
+        <article class="eachArticle articleSecond col-12">
             <div class="rubriquePara">
-                <h3>TITRE DE MA DIV</h3>
+                <h3>EXPERTISE ET EFFICIENCE</h3>
                 <div class="para1">
-                    <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
-                        Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
-                    <p>Lorem ipsum dolor sit amet. Ab harum distinctio eos nemo pariatur sit perspiciatis aliquam ea sequi corporis ut accusamus animi aut praesentium necessitatibus?
-                        Non atque quia sed repellendus inventore hic repellat perspiciatis est voluptatem nihil aut beatae quis vel quae provident.</p>
+                    <p class="subParaBis">Parce que l’énergie est un bien indispensable, nous proposons une approche pragmatique basée sur une technicité reconnue avec la recherche permanente de solutions optimisant les moyens.</p>
+                    <p class="subParaTerce">Parce que nos actions nous engagent, nous développons une culture d’acteurs responsables reposant sur une chaine de décision courte, sur le sens du client et sur le savoir-être.</p>
                 </div>
             </div>
+            <span class="deroulant"><i class="fa-solid fa-down"></i></span>
             <div>
                 <span><img class="imageHome" src="../public/asset/img/img_article/4-offres-dhebergement-de-data.png" alt=""></span>
             </div>
         </article>
     </section>
-<script src="{{ asset("asset/js/slider.js") }}"></script>
+<script src="{{ asset("asset/js/rowlArticle.js") }}"></script>
 </body>
 {% endblock %}

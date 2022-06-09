@@ -1,4 +1,794 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+/* style HEADER CSS*/
+
+.firstnavHeader{
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ECF5F7;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type : none;
+}
+nav > ul > li > a {
+    text-decoration: none;
+    color: #2F9116;
+    font-size: 20px;
+    font-weight: bold;
+}
+.slogan{
+    width: 70%;
+    color: #2F9116;
+}
+.logoHeader{
+    width: 30%;
+    margin: 10px;
+}
+.logoRs > li > a{
+    margin: 15px;
+}
+.secondnavHeader{
+    height: 40px;
+    background-color: #ECF5F7;
+}
+.burger {
+    width: 70px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    display: none;
+    cursor: pointer;
+}
+.divBurger {
+    width: 42px;
+    background-color: #2F9116;
+    height: 5px;
+    margin: 9px;
+}
+.modalBurger {
+    position: absolute;
+    padding: 31px;
+    background-color: #ECF5F7;
+    top: 10%;
+    right: 54%;
+    width: 234px;
+    height: 250px;
+    z-index: 1;
+    display: none;
+}
+.ulBurger{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.ulBurger > li {
+    margin: 10px;
+}
+.ulBurger > li > a {
+    text-decoration: none;
+    color: #2F9116;
+}
+.displayBlock{
+    display: block;!important;
+}
+
+/* style FOOTER CSS*/
+
+.firstnavFooter{
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ECF5F7;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type : none;
+}
+nav > ul > li > a {
+    text-decoration: none;
+    color: #2F9116;
+    font-size: large;
+    font-weight: bold;
+}
+slogan{
+    width: 70%;
+    color: #2F9116;
+}
+.logoFooter{
+    width: 30%;
+    margin: 10px;
+}
+.logoRs > li > a{
+    margin: 15px;
+}
+.secondnavFooter{
+    background-color: #ECF5F7;
+    height: 40px;
+}
+
+/* style HOME CSS*/
+h1{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    color: #2F9116;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    color: #2F9116;
+}
+h3{
+    color: #2F9116;
+}
+.subTitle{
+    font-style: italic;
+    color: #2F9116;
+}
+.presentation{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.rubriquePrime{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #D3EEE0;
+}
+.ourJob{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 50px auto;
+}
+.ourPrestation{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.allcards{
+    margin: 15px 0px;
+    width: 300px;
+}
+.buttonPrestations{
+    width: 70%;
+    margin: 50px 250px;
+    display: flex;
+    justify-content: flex-end;
+}
+.buttonPrestations > button{
+    border: none;
+}
+.buttonPrestations > button > a{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+article{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #B0413E 1px solid;
+}
+.bandeImage{
+    width: 100%;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../img/img_fond/paysage_pomme.jpg");
+}
+.filtre{
+    background-color: rgba(192, 226, 197, 0.418);
+}
+.fourArticles{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.presentationSection{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.articleFirst {
+    display: inline-flex;
+    flex-direction: revert;
+    justify-content: center;
+}
+.articleSecond {
+    display: inline-flex;
+    flex-direction: revert;
+    justify-content: center;
+}
+.rubriquePara h3{
+    color: #2F9116;
+}
+.deroulant{
+    display: none;
+}
+.imageHome{
+    transition: transform .1s;
+}
+.imageHome:hover{
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+.rubriquePara{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 50px;
+}
+.para1{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 100px auto;
+    gap: 20px;
+}
+.para1 p {
+    min-width: 280px;
+    max-width: 320px;
+}
+
+/* style de PRESTATIONS PLURIEL CSS*/
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.rubriquePrestations{
+    width: 50%;
+    height: 100px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    border:  1px solid #D3EEE0;
+    color: #2F9116;
+    align-items: center;
+}
+.sixprestations{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.myPrestations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.imageOperations{
+    width: 500px;
+    transition: transform .1s;
+}
+.imageOperations:hover{
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+.isoP{
+    margin: 20px 20px;
+    color: #2F9116;
+}
+.titleItem {
+    background-color: #D3EEE0;
+    color: #2F9116;
+}
+.presta{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border: 1px solid #5eb5e0;
+}
+article > h1{
+    text-align: center;
+    margin: 30px;
+}
+article {
+    width: 75%;
+    margin: 40px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.prestaTxtBtn{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+.prestaTxtBtn > p {
+    margin-bottom: 15px;
+}
+.prestaTxtBtn > a{
+    background-color: #179393;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #179393;
+    margin-bottom: 15px;
+}
+.btnUpdatePresta{
+    background-color: #179393;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #179393;
+}
+.modal {
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #ECF5F7;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+
+}
+.displayBlock{
+    display: block!important;
+}
+.modal > button{
+    text-decoration: none;
+    border: none;
+}
+
+/* style de PRESTATION SINGULIER CSS*/
+
+.presentation{
+    width: 70%;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rubriquePrestation{
+    margin: 30px;
+    padding: 30px;
+    border:  1px solid #D3EEE0;
+    color: #2F9116;
+}
+.isolation{
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.prestation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #5eb5e0;
+}
+.prestation a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.description1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.description1 img{
+    width: 500px;
+}
+.description2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.description2 img{
+    width: 500px;
+}
+
+/* style de CHOICE PART PROF CSS*/
+
+.choice{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    padding: 50px;
+    margin: 40px auto;
+    color: #2F9116;
+}
+.boxChoice{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+.part{
+    padding: 30px 70px 70px 0px;
+}
+.prof{
+    padding: 30px 0px 70px 70px;
+}
+
+/* style de FORMULAIRE APPOINTMENT PART - PROF CSS*/
+
+.titleAppointement{
+    display: flex;
+    justify-content: center;
+    background-color: #5eb5e0;
+}
+.formularAppointment{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    margin: 50px auto;
+    padding: 30px 30px;
+    border: 5px solid red;
+    border-radius: 10px;
+    background-color: rgb(41,126,186);
+}
+.prestationaccessupdateField{
+    margin: 10px;
+}
+.residencyaccessupdate{
+    margin: 10px;
+}
+.firstnameField{
+    margin: 10px;
+}
+.lastnameField{
+    margin: 10px;
+}
+.postalAdressField{
+    margin: 10px;
+}
+.postalCodeField{
+    margin: 10px;
+}
+.surfaceField{
+    margin: 10px;
+}
+.mailField{
+    margin: 10px;
+}
+.phoneField{
+    margin: 10px;
+}
+.callBackReq{
+    margin: 10px;
+}
+.noteField{
+    margin: 10px;
+}
+.companyNameField{
+    margin: 10px;
+}
+.siretField{
+    margin: 10px;
+}
+
+/* style de PROFILES ADMIN HANDLER  CSS*/
+
+.rubriqueProfiles{
+    width: 50%;
+    height: 100px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    border:  1px solid #D3EEE0;
+    color: #2F9116;
+    align-items: center;
+}
+.profileAdminUsers{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+    padding: 20px;
+    margin: 50px;
+    position: relative;
+}
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal {
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #ECF5F7;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+}
+.displayBlock{
+    display: block!important;
+}
+/*style VIEW ONE PROFIL CSS*/
+.grandProfilOneViewFormular{
+
+}
+.profilOneViewFormular{
+    width: 350px;
+    background-color: lightgrey;
+}
+/* style de CONTACT FORMULAIRE CSS*/
+.titleContact{
+    font-weight: bold;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    border: 5px solid red;
+    border-radius: 10px;
+    margin: 50px 150px;
+    background-color: rgb(41,126,186);
+}
+.formulaireContact{
+    display: flex;
+    justify-content: right;
+    margin: 50px auto;
+    padding: 30px 30px;
+    border: 5px solid red;
+    border-radius: 10px;
+    background-color: rgb(41,126,186);
+}
+.googleMap{
+    width: 50%;
+    margin: 100px 100px;
+}
+.contactFirstnameField{
+    margin: 10px;
+}
+.contactLastnameField{
+    margin: 10px;
+}
+.contactMailField{
+    margin: 10px;
+}
+.contactMessageField{
+    margin: 10px;
+}
+.contactPhoneField{
+    margin: 10px;
+}
+/* style de UPDATE ALL PROFILES FORMULAIRE CSS*/
+.formulaireUpdateAllProfiles{
+    width: 500px;
+    margin: 50px auto;
+}
+.fieldUpdateAllProfiles{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 30px 30px;
+    border: 5px solid red;
+    border-radius: 10px;
+    background-color: rgb(41,126,186);
+}
+/* style de UPDATE ONE PROFILE FORMULAIRE CSS*/
+.fieldUpdateOneProfile{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 30px 30px;
+    border: 5px solid red;
+    border-radius: 10px;
+    background-color: rgb(41,126,186);
+}
+
+/* style de FORMULAIRE LOGIN CSS*/
+.formulaireLogin{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 30px 30px;
+    border: 5px solid red;
+    border-radius: 10px;
+    background-color: rgb(41,126,186);
+}
+/* style de FORMULAIRE REGISTER CSS*/
+.fieldRegisterProfile{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 30px 30px;
+    border: 5px solid red;
+    border-radius: 10px;
+    background-color: rgb(41,126,186);
+}
+/* style MEDIA QUERY RESPONSIVE CSS*/
+
+/*  RESPONSIVE HEADER */
+@media screen and (max-width: 1280px){
+    .slogan{
+        font-size: 12px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 760px){
+    .slogan{
+        display: none!important;
+    }
+    .secondnavHeader{
+        display: none;
+    }
+    .burger{
+        display: block!important;
+    }
+}
+/*  RESPONSIVE  FOOTER */
+@media screen and (max-width: 760px) {
+    .firstnavFooter {
+        display: flex;
+        align-items: center;
+    }
+}
+/*  RESPONSIVE  HOME */
+@media screen and (max-width: 1280px) {
+    article{
+        padding: 0;
+        margin: 0;
+        border: none
+    }
+}
+@media screen and (max-width: 760px) {
+    h1{
+        font-size: 20px;
+        text-align: center;
+    }
+    h2{
+        font-size: 10px;
+        text-align: center;
+    }
+    h3{
+        margin: 10px auto;
+    }
+    .presentation {
+        margin: 0px auto;
+    }
+    .rubriquePrime{
+        margin: 0px auto;
+    }
+    article{
+        padding: 0;
+        margin: 0;
+    }
+    .eachArticle{
+        height: 320px;
+        border: #B0413E 1px solid;
+        overflow: hidden;
+        position: relative;
+    }
+    .eachArticle.active{
+        height: auto;
+    }
+    .deroulant{
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        margin: 0;
+        border: 1px solid black;
+        background-color: burlywood;
+        bottom: 5px;
+        right: 5px;
+    }
+    .articleFirst{
+        display: flex;
+        flex-direction: column;
+    }
+    .articleSecond{
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 0px auto;
+    }
+    .rubriquePara{
+        margin: 0!important;
+    }
+    .imageHome{
+        width: 200px;
+        transition: none;
+    }
+    .ourJob{
+        margin: 0px auto;
+    }
+    .ourPrestation{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .rubriquePrime{
+        height: 500px;
+    }
+    .buttonPrestations{
+        margin: 10px auto;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/*  RESPONSIVE PRESTATIONS PLURIEL*/
+@media screen and (max-width: 860px){
+    .presta{
+        display: flex;
+        flex-direction: column;
+    }
+    .rubriquePrestations{
+        text-align: center;
+    }
+    .sixprestations{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 760px) {
+    .presta{
+        display: flex;
+        flex-direction: column;
+    }
+    .rubriquePrestations{
+        text-align: center;
+    }
+    .sixprestations{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+/*  RESPONSIVE VOTRE PROFIL VIEW ONE PROFIL*/
+
+/*  RESPONSIVE FORMULAIRE APPOINTMENT PART - PROF*/
+
+/*  RESPONSIVE FORMULAIRE CONTACT*/

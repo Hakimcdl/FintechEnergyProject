@@ -1,20 +1,22 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Gestion des profils{% endblock %}
-
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('asset/css/profilesAdminHandler.css') }}">
 <main>
+    <div class="rubriqueProfiles">Voici la liste des profils utilisateurs :</div>
            {% for user in users %}
 
-               <div class="users">
-                {{ user.lastname }}
-                {{ user.email }}
-                   {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('update_user', {'id': app.user.id}) }}">Modifier l'utilisateur</a>{% endif %}
-                   {% if is_granted('ROLE_ADMIN') %} <button  class="del">Supprimer utilisateur</button>{% endif %}
+               <div class="profileAdminUsers">
+                   <div class="d-flex flex-column justify-content-center align-items-center">
+                       <p class="profilAdminNameField fw-bolder">Votre nom : {{ user.lastname }}</p>
+                       <p class="profilAdminEmailField fw-bolder">Adresse email : {{ user.email }}</p>
+                   </div>
+                   {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-success m-3" href="{{ path('update_user', {'id': app.user.id}) }}">Modifier l'utilisateur</a>{% endif %}
+                   {% if is_granted('ROLE_ADMIN') %} <button  class="del btn btn-danger m-3">Supprimer l'utilisateur</button>{% endif %}
                         <div class="modal">
-                            <a href="{{ path('remove_user', {'id':user.id } ) }}" class="deleteUser">Supprimer utilisateur</a>
-                            <button class="cancel">Annuler</button>
+                        {#  {{ dump(user.lastname) }}#}
+                            <p>Voulez-vous vraiment supprimer cet utilisateur ?</p>
+                            <button class="cancel btn btn-primary">Annuler</button>
+                            <a href="{{ path('remove_user', {'id':user.id } ) }}" class="deleteUser btn btn-danger">Supprimer</a>
                         </div>
                </div>
                 {% endfor %}

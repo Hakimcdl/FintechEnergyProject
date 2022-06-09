@@ -1,20 +1,38 @@
 {% extends 'base.html.twig' %}
 {% block title %}Création profil{% endblock %}
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
 
     <h1>Page de création de profil</h1>
-
+    <span class="fieldRegisterProfile">
         {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.lastname) }}
-        {{ form_row(registrationForm.email) }}
+        <div class="m-3">
+            {{ form_row(registrationForm.lastname,{
+            label: 'Nom :',
+            'attr':{'class': 'registerNameField form-control'}
+            }) }}
+        </div>
 
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        <div class="m-3">
+            {{ form_row(registrationForm.email,{
+            label: 'Courriel :',
+            'attr':{'class': 'registerEmailField form-control'}
+            }) }}
+        </div>
 
-        <button type="submit" class="btn">Register</button>
+        <div class="m-3">
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe :',
+                'attr':{'class': 'registerPasswordField form-control'}
+            }) }}
+        </div>
+
+        <div class="m-3">
+            {{ form_row(registrationForm.agreeTerms) }}
+        </div>
+
+        <div class="m-3">
+            <button type="submit" class="btn btn-lg btn-primary">Inscription</button>
+        </div>
         {{ form_end(registrationForm) }}
+    </span>
 {% endblock %}

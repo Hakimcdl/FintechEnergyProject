@@ -1,9 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}Voir les prestations{% endblock %}
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/prestations.css') }}">
 
 <body>
 
@@ -12,43 +9,35 @@
 </section>
 
 <section class="sixprestations">
-    <div class="isoP">Isolation de combles</div>
-    <div class="isoP">Isolation de toitures</div>
-    <div class="isoP">Isolation de murs</div>
-    <div class="isoP">Isolation des planchers</div>
-    <div class="isoP">Fenêtre ou porte-fenêtre</div>
-    <div class="isoP">Fermeture de fenêtres</div>
-    <div class="isoP">Panneaux solaires</div>
+    {% for prestation in prestations %}
+    <div class="isoP"><a href="#{{ prestation.title }}">{{ prestation.title }}</a></div>
+    {% endfor %}
 </section>
 
 <main>
 <section class="myPrestations">
-     {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('addPresta') }}">Créer une prestation</a> {% endif %}
-
+     {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-success" href="{{ path('addPresta') }}">Créer une prestation</a> {% endif %}
      {% for prestation in prestations %}
-
-    <article>
+    <article id="str_replace({{prestation.title}})">
         <h1 class="titleItem">{{ prestation.title }}</h1>
 
-        <div class="presta">
-
-            <img class="imageOperations" src="{{ asset('asset/img/img_operation/'~prestation.img.title) }}" alt="image d'opérations énergétiques">
-
-            <div class="prestaTxtBtn">
+        <div class="prestaTxtBtn card text-center">
+            <div class="presta text-bg-success text-center align-items-center mb-3 ">
+               <div class="width: 500px img-fluid"><img class="imageOperations" src="{{ asset('asset/img/img_operation/'~prestation.img.title) }}" alt="image d'opérations énergétiques"></div>
                 <p>{{ prestation.description }}</p>
-                <a href="{{ path('prestation', {'title': prestation.title}) }}">Voir notre prestation</a>
             </div>
-
+            <a class="btn btn-success" href="{{ path('prestation', {'title': prestation.title}) }}">Voir notre prestation</a>
         </div>
 
         <div class="adminControl">
-            {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('updatePresta', {'title': prestation.title}) }}">Modifier Prestation</a>{% endif %}
-            {% if is_granted('ROLE_ADMIN') %} <button class="del">Supprimer prestation</button>{% endif %}
+            {% if is_granted('ROLE_ADMIN') %}<a class="btnUpdatePresta btn btn-success" href="{{ path('updatePresta', {'title': prestation.title}) }}">Modifier Prestation</a>{% endif %}
+            {% if is_granted('ROLE_ADMIN') %} <button class="del btn btn-danger">Supprimer prestation</button>{% endif %}
             {% if is_granted('ROLE_ADMIN') %}
                 <div class="modal">
-                    <button class="cancel" >Annuler</button>
-                    {{ dump(prestation.title) }}
-                    {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('removePresta', {'title': prestation.title}) }}">Supprimer Prestation</a>{% endif %}
+                    {#  {{ dump(prestation.title) }}#}
+                    <p>Voulez-vous vraiment supprimer la prestation ?</p>
+                    <button class="cancel btn btn-primary" >Annuler</button>
+                    {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-danger" href="{{ path('removePresta', {'title': prestation.title}) }}">Supprimer</a>{% endif %}
                 </div>
             {% endif %}
         </div>
@@ -58,5 +47,5 @@
 </main>
 
 </body>
-        <script src="{{ asset("asset/js/modal.js") }}"></script>
+        <script src="{{ asset("asset/js/modalAdminDeletePrestations.js") }}"></script>
 {% endblock %}

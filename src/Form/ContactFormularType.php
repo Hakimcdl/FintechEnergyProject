@@ -18,7 +18,6 @@ class ContactFormularType extends AbstractType
             ->add('mail')
             ->add('message')
             ->add('phone')
-            ->add('executed')
             ->add('envoyer', SubmitType::class)
         ;
     }

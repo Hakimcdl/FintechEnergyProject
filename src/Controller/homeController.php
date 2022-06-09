@@ -14,7 +14,7 @@ class homeController extends AbstractController
     #[Route('/', name: 'home', methods: ['GET', 'POST'])]
     public function home(PrestationRepository $prestationRepository)
     {
-        $prestations = $prestationRepository->findBy(array(), null, 6);
+        $prestations = $prestationRepository->findBy(array(), null);
 
         return $this->render('home.html.twig', [
             'prestations' => $prestations
@@ -51,9 +51,9 @@ class homeController extends AbstractController
     #[Route('/profil/remove/{id}', name: 'remove_user_id' )]
     public function removeUserId(UserRepository $userRepository, $id)
     {
-        // $this va chercher la fonction get user par son id ou va recuperer le roles de l'admin
+        // $this va chercher la fonction get user par son id ou va récupérer le roles de l'admin
         if ($this->getUser()->getId() == $id ) {
-            // recupère les id de tout les membres grace a la table user
+            // cela récupère les id de touts les membres grace a la table user
             $userRemove = $userRepository->findOneBy(['id' => $id]);
 
             $remove = $userRepository->remove($userRemove);

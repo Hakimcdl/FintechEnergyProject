@@ -1,9 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}Voir une prestation{% endblock %}
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/prestation.css') }}">
-
 <body>
 <section>
     <article class="presentation">
@@ -12,10 +9,16 @@
 
     <article class="isolation">
         <h1>{{ presta.title }}</h1>
-        <div class="Prestation">
-            <img src="{{ asset('asset/img/img_operation/'~presta.img.title) }}" alt="image d'opérations énergétiques">
-            <p>{{ presta.description }}</p>
-            <a href="{{ path('choicePartProf', {'titlePresta': presta.title}) }}">Contactez-nous</a>
+        <div class="prestation">
+            <div class="description1">
+                <img src="{{ asset('asset/img/img_operation/'~presta.img.title) }}" alt="image d'opérations énergétiques">
+                <p>{{ presta.description }}</p>
+            </div>
+            <div class="description2">
+                <p>{{ presta.description }}</p>
+                <img src="{{ asset('asset/img/img_technique/'~presta.img.title) }}" alt="image d'opérations énergétiques">
+            </div>
+            <a class="btn btn-primary my-5" href="{{ path('choicePartProf', {'titlePresta': presta.title}) }}">Contactez-nous</a>
         </div>
     </article>
 </section>
