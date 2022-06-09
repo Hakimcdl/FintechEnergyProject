@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\User;
 use App\Form\ContactFormularType;
 use App\Repository\ContactRepository;
 use App\Repository\UserRepository;
@@ -33,5 +34,12 @@ class contactFormularController extends AbstractController
             return $this->render('formular/contactFormular.html.twig', [
                 'formContactRequest' => $formContactRequest->createView()
             ]);
+    }
+    #[Route('/demandeContact/resumeContact', name: 'resumeContact', methods: ['GET', 'POST'])]
+    public function resumeContact (ContactRepository $contactRepository, UserRepository $userRepository, Request $request)
+    {
+        return $this->render('pages/resumeContact.html.twig',[
+            'request' => $request
+        ]);
     }
 }
