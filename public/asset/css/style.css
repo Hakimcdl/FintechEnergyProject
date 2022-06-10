@@ -569,9 +569,6 @@ main{
     display: block!important;
 }
 /*style VIEW ONE PROFIL CSS*/
-.grandProfilOneViewFormular{
-
-}
 .profilOneViewFormular{
     width: 350px;
     background-color: lightgrey;
@@ -808,6 +805,24 @@ main{
     .sixprestations{
         display: flex;
         flex-wrap: wrap;
+    }
+}
+
+/* style de PRESTATION SINGULIER CSS*/
+@media screen and (max-width: 860px) {
+    .rubriquePrestation{
+        align-items: center;
+        text-align: center;
+    }
+    .description1{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .description2{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 }
 /*  RESPONSIVE VOTRE PROFIL VIEW ONE PROFIL*/
