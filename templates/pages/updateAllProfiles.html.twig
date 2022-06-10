@@ -8,18 +8,24 @@
     {#<div class="formulaireUpdateAllProfiles">#}
         <span class="fieldUpdateAllProfiles">
             {{ form_start(editFormUser) }}
+                <div class="m-3">
                 {{ form_row(editFormUser.lastname,{
                     label: 'Nom :',
                     'attr':{'class': 'allProfilesNameField form-control'}
                 }) }}
+                </div>
+                <div class="m-3">
                 {{ form_row(editFormUser.email,{
                     label: 'Courriel :',
                     'attr':{'class': 'allProfilesEmailField form-control'}
                 }) }}
+                </div>
+                <div class="m-3">
                 {{ form_row(editFormUser.plainPassword,{
                     label: 'Mot de passe :',
                     'attr':{'class': 'allProfilesPasswordField form-control'}
                 }) }}
+                </div>
                 <input type="submit" value="Envoyer">
             {{ form_end(editFormUser) }}
         </span>

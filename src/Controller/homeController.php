@@ -49,18 +49,21 @@ class homeController extends AbstractController
     }
 
     #[Route('/profil/remove/{id}', name: 'remove_user_id' )]
-    public function removeUserId(UserRepository $userRepository, $id)
+    public function removeUserId(UserRepository $userRepository, $id, Request $request)
     {
         // $this va chercher la fonction get user par son id ou va récupérer le roles de l'admin
         if ($this->getUser()->getId() == $id ) {
-            // cela récupère les id de touts les membres grace a la table user
+            // récupère les id de touts les membres grace a la table user
             $userRemove = $userRepository->findOneBy(['id' => $id]);
 
-            $remove = $userRepository->remove($userRemove);
-            if ($remove == true) {
+            $userRepository->remove($userRemove);
+                $request->getSession()->invalidate();
                 return $this->redirectToRoute('home');
-            }
+
+        } else {
+            // redirection vers la page d'erreur
+            return $this->redirectToRoute('home');
         }
-                return $this->redirectToRoute('home');
-            }
+
+    }
 }

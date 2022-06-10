@@ -1,13 +1,30 @@
 {% extends 'base.html.twig' %}
 {% block title %}Ajouter une prestation{% endblock %}
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
 
 <body>
 <h1>Ajouter une prestation</h1>
-    <span>
-        {{ form(formPrestation) }}
+    <span class="formulaireAddPrestation">
+        {{ form_start(formPrestation) }}
+            <div class="m-3">
+            {{ form_row(formPrestation.title,{
+                label: 'Titre :',
+                'attr':{'class': 'addPrestationField form-control'}
+            }) }}
+            </div>
+            <div class="m-3">
+            {{ form_row(formPrestation.img,{
+                label: 'Image :',
+                'attr':{'class': 'addImageField form-control'}
+            }) }}
+            </div>
+            <div class="m-3">
+            {{ form_row(formPrestation.description,{
+                label: 'Description :',
+                'attr':{'class': 'addDescriptionField form-control'}
+            }) }}
+            </div>
+        {{ form_end(formPrestation) }}
     </span>
 </body>
 {% endblock %}

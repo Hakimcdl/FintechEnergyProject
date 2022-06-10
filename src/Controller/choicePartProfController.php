@@ -50,7 +50,7 @@ class choicePartProfController extends AbstractController
             }
             $appointmentRepository->add($appointment);
             //dd($prestas, $appointmentRepository->findOneBy(['id'=>$appointment->getId()]));
-            return $this->render('pages/resume.html.twig', [
+            return $this->render('pages/resumePrestations.html.twig', [
                 'formAppointment' => $formAppointment->createView(),
                 'status' => $FormulaireStatus
             ]);
@@ -71,7 +71,7 @@ class choicePartProfController extends AbstractController
     #[Route('{titlePresta}/{FormulaireStatus}/formulaire/resume', name: 'resume', methods: ['GET', 'POST'])]
     public function resumePrestation (AppointmentRepository $appointmentRepository, $titlePresta)
     {
-        return $this->render('pages/resume.html.twig',[
+        return $this->render('pages/resumePrestations.html.twig',[
             'titlePresta' => $titlePresta
         ]);
     }

@@ -10,7 +10,7 @@
                        <p class="profilAdminNameField fw-bolder">Votre nom : {{ user.lastname }}</p>
                        <p class="profilAdminEmailField fw-bolder">Adresse email : {{ user.email }}</p>
                    </div>
-                   {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-success m-3" href="{{ path('update_user', {'id': app.user.id}) }}">Modifier l'utilisateur</a>{% endif %}
+                   {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-success m-3" href="{{ path('update_user', {'id': user.id}) }}">Modifier l'utilisateur</a>{% endif %}
                    {% if is_granted('ROLE_ADMIN') %} <button  class="del btn btn-danger m-3">Supprimer l'utilisateur</button>{% endif %}
                         <div class="modal">
                         {#  {{ dump(user.lastname) }}#}
