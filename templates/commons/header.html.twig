@@ -1,4 +1,4 @@
-{% block body %}
+
 <body>
     <nav class="firstnavHeader">
         <span class="logoHeader"><a href="{{ path('home') }}"><img src="{{ asset('asset/img/img_article/logomaisonrenov1.png') }}" alt="logo header"></a></span>
@@ -12,7 +12,7 @@
                 <li><a href="{{ path('home') }}">Accueil</a></li>
                 <li><a href="{{ path('prestations') }}">Nos prestations</a></li>
                 {% if app.user == true %}<li><a href="{{ path('view_profil') }}">Votre profil</a></li> {% else %}
-                <li><a href="{{ path('app_register') }}">S'inscrire</a> {% endif %}
+                <li><a href="{{ path('app_register') }}">S'inscrire / Se connecter</a> {% endif %}
                 <li><a href="{{ path('demandeContact') }}">Contact</a></li>
                 {% if is_granted('ROLE_ADMIN') %}<li><a href="{{ path('view_Profiles') }}">Gestion Profils</a></li>{% endif %}
             </ul>
@@ -24,7 +24,7 @@
             <li><a href="{{ path('app_login') }}"><img src="{{ asset('asset/img/img_article/facebooklogo.png') }}" alt="logo user"></a></li>
             <li><a href="{{ path('app_login') }}"><img src="{{ asset('asset/img/img_article/instagramlogo.png') }}" alt="logo user"></a></li>
             <li><a href="{{ path('app_login') }}"><img src="{{ asset('asset/img/img_article/linkedinlogo.png') }}" alt="logo user"></a></li>
-            <li><a href="{{ path('app_login') }}"><img src="{{ asset('asset/img/img_article/userlogo.png') }}" alt="logo user"></a></li>
+            <li>{%  if app.user == true %}<a href="{{ path('app_logout') }}">Déconnexion</a>{% else %}<a href="{{ path('app_login') }}"><img src="{{ asset('asset/img/img_article/userlogo.png') }}" alt="logo user connexion"></a>{% endif %}</li>
         </ul>
     </nav>
     <nav class="secondnavHeader">
@@ -38,4 +38,3 @@
         </ul>
     </nav>
 </body>
-{% endblock %}

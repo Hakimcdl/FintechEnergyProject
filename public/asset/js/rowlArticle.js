@@ -1,10 +1,14 @@
-const deroulant = document.querySelector('.deroulant')
+const deroulant = document.querySelectorAll('.deroulant')
 const eachArticle = document.querySelector('.eachArticle')
 
+
 deroulant.forEach(element =>{
+    console.log('ok', element);
     element.addEventListener('click',()=> {
-        eachArticle.classList.toggle('active')
+        console.log(element);
+        element.parentElement.classList.toggle('active')
+        element.classList.toggle('rotate')
     })
 });
 
-//console.log('ok');
+//

@@ -723,6 +723,12 @@ main{
         padding: 0;
         margin: 0;
     }
+    .eachArticle .para1{
+        display: none;
+    }
+    .eachArticle.active .para1{
+        display: block;
+    }
     .eachArticle{
         height: 320px;
         border: #B0413E 1px solid;
@@ -738,12 +744,14 @@ main{
         width: 50px;
         height: 50px;
         border-radius: 50%;
+        color: black;
         text-align: center;
         margin: 0;
-        border: 1px solid black;
-        background-color: burlywood;
-        bottom: 5px;
+        top: 15px;
         right: 5px;
+    }
+    .rotate{
+        transform: rotate(180deg)!important;
     }
     .articleFirst{
         display: flex;

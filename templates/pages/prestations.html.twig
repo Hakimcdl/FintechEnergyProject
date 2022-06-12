@@ -10,7 +10,7 @@
 
 <section class="sixprestations">
     {% for prestation in prestations %}
-    <div class="isoP"><a href="#{{ prestation.title }}">{{ prestation.title }}</a></div>
+    <div class="isoP"><a href="#{{ prestation.title|replace({' ':'_'}) }}">{{ prestation.title }}</a></div>
     {% endfor %}
 </section>
 
@@ -18,7 +18,7 @@
 <section class="myPrestations">
      {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-success" href="{{ path('addPresta') }}">Créer une prestation</a> {% endif %}
      {% for prestation in prestations %}
-    <article id="str_replace({{prestation.title}})">
+    <article id="{{ prestation.title|replace({' ':''}) }}">
         <h1 class="titleItem">{{ prestation.title }}</h1>
 
         <div class="prestaTxtBtn card text-center">
