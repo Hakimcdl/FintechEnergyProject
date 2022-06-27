@@ -7,6 +7,7 @@ use App\Entity\Prestation;
 use App\Entity\Residency;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -34,7 +35,12 @@ class PartAppointmentType extends AbstractType
             ->add('surface')
             ->add('mail')
             ->add('phone')
-            ->add('callBackRequest')
+            ->add('callBackRequest', DateType::class, [
+                'widget'=>'single_text',
+                'format'=>'dd/MM/yyyy',
+                'html5'=>false,
+                'attr'=>['autocomplete'=>'off', 'value'=>(new \DateTime())->format('d/m/Y')],
+            ])
             ->add('note')
             ->add('envoyer', SubmitType::class)
         ;

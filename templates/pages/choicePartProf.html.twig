@@ -3,7 +3,7 @@
 {% block body %}
 <body>
     <main>
-        <div class="choice">Êtes vous un particulier ou un professionnel ?</div>
+        <h1 class="choice">Êtes vous un particulier ou un professionnel ?</h1>
 
         <section class="boxChoice">
             <div class="part">
@@ -15,7 +15,6 @@
             <a href="{{ path('addFormular', {'FormulaireStatus': 'professionnel', 'titlePresta' : titlePresta}) }}">
                 <img src="{{ asset('asset/img/img_fond/image-federationProf.png') }}" alt="image professionnelle"></a>
             </div>
-
         </section>
     </main>
 </body>

@@ -18,7 +18,7 @@ class Prestation
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     private $title;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 1500)]
     private $description;
 
     #[ORM\Column(type: 'datetime')]
@@ -30,16 +30,17 @@ class Prestation
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'prestations')]
     private $user;
 
-    #[ORM\ManyToOne(targetEntity: Img::class)]
-    private $img;
-
     #[ORM\ManyToMany(targetEntity: Appointment::class, mappedBy: 'prestationaccessupdate')]
     private $appointmentPrestation;
+
+    #[ORM\OneToMany(mappedBy: 'prestation', targetEntity: ImgPrestation::class, orphanRemoval: true)]
+    private $imgPrestations;
 
     public function __construct()
     {
         $this->imgs = new ArrayCollection();
         $this->appointmentPrestation = new ArrayCollection();
+        $this->imgPrestations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -107,18 +108,6 @@ class Prestation
         return $this;
     }
 
-    public function getImg(): ?Img
-    {
-        return $this->img;
-    }
-
-    public function setImg(?Img $img): self
-    {
-        $this->img = $img;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Appointment>
      */
@@ -139,6 +128,36 @@ class Prestation
     public function removeAppointmentPrestation(Appointment $appointmentPrestation): self
     {
         $this->appointmentPrestation->removeElement($appointmentPrestation);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ImgPrestation>
+     */
+    public function getImgPrestations(): Collection
+    {
+        return $this->imgPrestations;
+    }
+
+    public function addImgPrestation(ImgPrestation $imgPrestation): self
+    {
+        if (!$this->imgPrestations->contains($imgPrestation)) {
+            $this->imgPrestations[] = $imgPrestation;
+            $imgPrestation->setPrestation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImgPrestation(ImgPrestation $imgPrestation): self
+    {
+        if ($this->imgPrestations->removeElement($imgPrestation)) {
+            // set the owning side to null (unless already changed)
+            if ($imgPrestation->getPrestation() === $this) {
+                $imgPrestation->setPrestation(null);
+            }
+        }
 
         return $this;
     }

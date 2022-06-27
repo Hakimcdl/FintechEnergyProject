@@ -3,21 +3,19 @@
 {% block body %}
 <body>
 <section>
-    <article class="presentation">
+    <article class="presentationPrestation">
         <div class="rubriquePrestation">Voici notre fiche technique d'isolation :</div>
     </article>
 
     <article class="isolation">
         <h1>{{ presta.title }}</h1>
         <div class="prestation">
-            <div class="description1">
-                <img src="{{ asset('asset/img/img_operation/'~presta.img.title) }}" alt="image d'opérations énergétiques">
-                <p>{{ presta.description }}</p>
+            {% for imgPrestation in presta.imgPrestations %}
+            <div class="description">
+                <img src="{{ asset('asset/img/'~imgPrestation.img.title) }}" alt="image d'opérations énergétiques">
+                <p>{{ imgPrestation.description }}</p>
             </div>
-            <div class="description2">
-                <p>{{ presta.description }}</p>
-                <img src="{{ asset('asset/img/img_technique/'~presta.img.title) }}" alt="image d'opérations énergétiques">
-            </div>
+            {% endfor %}
             <a class="btn btn-primary my-5" href="{{ path('choicePartProf', {'titlePresta': presta.title}) }}">Contactez-nous</a>
         </div>
     </article>

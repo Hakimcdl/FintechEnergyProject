@@ -2,8 +2,8 @@
 {% block title %}Création profil{% endblock %}
 {% block body %}
 
-    <h1>Page de création de profil</h1>
-    <a href="{{ path('app_login') }}">Se connecter</a>
+    <h1 class="fw-bold">Connectez-vous ou créer un compte</h1>
+    <span class="d-flex justify-content-center"><a class="btn btn-primary" href="{{ path('app_login') }}">Se connecter</a></span>
 
     <span class="fieldRegisterProfile">
         {{ form_start(registrationForm) }}

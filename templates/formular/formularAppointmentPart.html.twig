@@ -1,5 +1,36 @@
 {% extends 'base.html.twig' %}
 {% block title %}Formulaire rendez-vous{% endblock %}
+{% block stylesheets%}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $.datepicker.setDefaults(
+            {
+                altField: "#datepicker",
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'dd/mm/yy'
+            }
+        );
+    </script>
+    <script>
+        $( function() {
+            $( ".callBackRequestField" ).datepicker();
+        } );
+    </script>
+{% endblock %}
+{%  block javascripts %}
+{% endblock %}
+
 {% block body %}
     <body>
             <div class="titleAppointement">
@@ -14,7 +45,7 @@
                         'attr':{'class': 'prestationaccessupdateField'}
                     }) }}
                     {{ form_row(formAppointment.residencyaccessupdate,{
-                        label: 'Choisissez votre mode dhabitation :',
+                        label: 'Choisissez votre mode d\'habitation :',
                         'attr':{'class': 'residencyaccessupdateField'}
                     }) }}
                     {{ form_row(formAppointment.firstname,{

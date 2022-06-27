@@ -2,7 +2,7 @@
 {% block title %}Accueil{% endblock %}
 {% block body %}
 <body>
-    <h1>FINTECH ENERGY</h1>
+    <h1 class="fw-bold">FINTECH ENERGY</h1>
     <h2 class="subTitle">"MAÎTRISONS ENSEMBLE L'ÉNERGIE"</h2>
     <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -12,22 +12,26 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
             </div>
             <div class="carousel-inner bg-secondary my-5" style="height:500px">
                 <div class="carousel-item active py-auto" style="height:500px">
-                    <img src="asset/img/img_fond/bandeau-energie-verte.jpg" class="d-block w-100" alt="...">
+                    <img src="asset/img/img_fond/bandeau-sur-renovation.jpg" class="d-block w-100" alt="image scroller energy renovation">
                 </div>
                 <div class="carousel-item py-auto" style="height:500px">
-                    <img src="asset/img/img_fond/paysage_pomme.jpg" class="d-block w-100" alt="...">
+                    <img src="asset/img/img_fond/Rénovation_énergétique_des_bâtiments.jpg" class="d-block w-100" alt="image scroller energy renovation">
                 </div>
                 <div class="carousel-item py-auto" style="height:500px">
-                    <img src="asset/img/img_fond/paysagee_oliènne.jpg" class="d-block w-100" alt="...">
+                    <img src="asset/img/img_fond/bandeau_schemaiso.jpg" class="d-block w-100" alt="image scroller energy renovation">
                 </div>
                 <div class="carousel-item py-auto" style="height:500px">
-                    <img src="asset/img/img_fond/paysage_greenhouse.jpg" class="d-block w-100" alt="...">
+                    <img src="asset/img/img_fond/bandeau_renovationenergetique.jpg" class="d-block w-100" alt="image scroller energy renovation">
                 </div>
                 <div class="carousel-item py-auto" style="height:500px">
-                    <img src="asset/img/img_fond/bandeau_energie.jpg" class="d-block w-100" alt="...">
+                    <img src="asset/img/img_fond/bandeau_maison-bbc.jpg" class="d-block w-100" alt="image scroller energy renovation">
+                </div>
+                <div class="carousel-item py-auto" style="height:500px">
+                    <img src="asset/img/img_fond/paysage_greenhouse.jpg" class="d-block w-100" alt="image scroller energy renovation">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -41,9 +45,9 @@
         </div>
     </div>
 
-    <section class="presentation container">
+    <section class="presentationHome container">
         <div class="col-12">
-            <div class="rubriquePrime text-center">
+            <div class="rubriquePrime1 text-center">
                 <h2>La stratégie nationale de transition écologique vers un développement durable :
                     <br>Prime et Subvention</h2>
                 <p class="col-10">La loi de transition énergétique pour une croissance verte crée un élan d’écologie positive qui lève les freins, libère les initiatives et donne à chacun le pouvoir d’agir.
@@ -61,7 +65,7 @@
     </section>
 
     <section class="ourJob container">
-        <h2>Notre métier, nos prestations :</h2>
+        <h2 class="fw-bold">Notre métier, nos prestations :</h2>
         <div class="ourPrestation">
             {% for prestation in prestations %}
                 <article class ="card allcards">
@@ -84,7 +88,7 @@
 
     <section class="fourArticles container">
         <div class="solutions col-12 my-5">
-            <div class="rubriquePrime text-center">
+            <div class="rubriquePrime2 text-center">
             <h2>LES SOLUTIONS</h2>
             <p>L’écologie, c’est avant tout la défense des éco-systèmes, composés par une multitude d’organismes. Pour adopter une démarche écologique, il est important de comprendre l’équilibre de la relation entre l’homme et la nature, de l’aimer et de le protéger."</p>
             </div>

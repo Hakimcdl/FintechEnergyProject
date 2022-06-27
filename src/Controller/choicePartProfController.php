@@ -37,8 +37,8 @@ class choicePartProfController extends AbstractController
         }
 
         $formAppointment = $this->createForm($formType, $appointment);
-
         $formAppointment->handleRequest($request);
+
         if ($formAppointment->isSubmitted() && $formAppointment->isValid()) {
             $appointment->setRequestDate($dateNow)
                         ->setActive(true);
@@ -50,6 +50,7 @@ class choicePartProfController extends AbstractController
             }
             $appointmentRepository->add($appointment);
             //dd($prestas, $appointmentRepository->findOneBy(['id'=>$appointment->getId()]));
+
             return $this->render('pages/resumePrestations.html.twig', [
                 'formAppointment' => $formAppointment->createView(),
                 'status' => $FormulaireStatus
