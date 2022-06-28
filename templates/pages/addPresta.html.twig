@@ -13,17 +13,37 @@
             }) }}
             </div>
             <div class="m-3">
-            {{ form_row(formPrestation.img,{
+            {{ form_row(formPrestation.imgPrestations.vars.prototype.img,{
+                label: 'Image :',
+                'attr':{
+                    'class': 'addImageField form-control',
+                    'name': 'prestation[imgPrestations][0][img]'
+                    }
+            }) }}
+            </div>
+            <div class="m-3">
+            {{ form_row(formPrestation.imgPrestations.vars.prototype.description,{
+                label: 'Description :',
+                'attr':{
+                    'class': 'addDescriptionField form-control',
+                    'name': 'prestation[imgPrestations][0][description]'
+                }
+            }) }}
+            </div>
+
+        {#  <div class="m-3">
+            {{ form_row(formPrestation.imgPrestations.vars.prototype.img,{
                 label: 'Image :',
                 'attr':{'class': 'addImageField form-control'}
             }) }}
             </div>
             <div class="m-3">
-            {{ form_row(formPrestation.description,{
+            {{ form_row(formPrestation.imgPrestations.vars.prototype.description,{
                 label: 'Description :',
                 'attr':{'class': 'addDescriptionField form-control'}
             }) }}
-            </div>
+            </div> #}
+
         {{ form_end(formPrestation) }}
     </span>
 </body>

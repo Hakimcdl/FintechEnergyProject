@@ -14,14 +14,30 @@
                 'attr':{'class': 'updatePrestationField form-control'}
             }) }}
             </div>
+
             <div class="m-3">
-            {{ form_row(editFormPresta.img,{
+            {{ form_row(editFormPresta.imgPrestations[0].img,{
                 label: 'Image :',
                 'attr':{'class': 'updateImageField form-control'}
             }) }}
             </div>
+
             <div class="m-3">
-            {{ form_row(editFormPresta.description,{
+            {{ form_row(editFormPresta.imgPrestations[0].description,{
+                label: 'Description :',
+                'attr':{'class': 'updateDescriptionField form-control'}
+            }) }}
+            </div>
+
+        <div class="m-3">
+            {{ form_row(editFormPresta.imgPrestations[1].img,{
+                label: 'Image :',
+                'attr':{'class': 'updateImageField form-control'}
+            }) }}
+            </div>
+
+            <div class="m-3">
+            {{ form_row(editFormPresta.imgPrestations[1].description,{
                 label: 'Description :',
                 'attr':{'class': 'updateDescriptionField form-control'}
             }) }}
