@@ -31,7 +31,7 @@ class Prestation
     #[ORM\ManyToMany(targetEntity: Appointment::class, mappedBy: 'prestationaccessupdate')]
     private $appointmentPrestation;
 
-    #[ORM\OneToMany(mappedBy: 'prestation', targetEntity: ImgPrestation::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'prestation', targetEntity: ImgPrestation::class, orphanRemoval: true, cascade:["persist" , "remove"])]
     private $imgPrestations;
 
     public function __construct()

@@ -30,6 +30,9 @@ class contactFormularController extends AbstractController
             if ($formContactRequest->isSubmitted() && $formContactRequest->isValid()){
                 $contactRepository  //->setRequestDate($dateNow) VOIR SI JE METS UN CHAMP "date request" DANS MA TABLE  ContactFormularType.
                                     ->add($contactRequest);
+                return $this->render('pages/resumeContact.html.twig',[
+                    'request' => $request
+                ]);
             }
             return $this->render('formular/contactFormular.html.twig', [
                 'formContactRequest' => $formContactRequest->createView()

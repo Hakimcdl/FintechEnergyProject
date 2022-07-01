@@ -417,9 +417,9 @@ article {
     justify-content: center;
     margin: 50px auto;
     padding: 30px 30px;
+    background-color: lightgrey;
     border: 5px solid red;
     border-radius: 10px;
-    background-color: rgb(41,126,186);
 }
 /* style de UPDATE DES PRESTATIONS ADMIN pour 1 PRESTATIONS CSS*/
 .formulaireUpdatePrestation{
@@ -428,9 +428,9 @@ article {
     justify-content: center;
     margin: 50px auto;
     padding: 30px 30px;
+    background-color: lightgrey;
     border: 5px solid red;
     border-radius: 10px;
-    background-color: rgb(41,126,186);
 }
 
 /* style de PRESTATION SINGULIER CSS*/
@@ -514,6 +514,7 @@ article {
     width: 50%;
     display: flex;
     justify-content: center;
+    text-align: center;
     font-size: 40px;
     padding: 50px;
     margin: 40px auto;
@@ -745,10 +746,18 @@ main{
     border-radius: 10px;
     background-color: lightgrey;
 }
+#scroll_to_top {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    bottom: 50px;
+    right: 50px;
+}
+#scroll_to_top img {
+    width: 35px;
+}
 
-/*---KeyFrames----*/
-
-/* style MEDIA QUERY RESPONSIVE CSS*/
+/*** style MEDIA QUERY RESPONSIVE CSS ***/
 
 /*  RESPONSIVE HEADER */
 @media screen and (max-width: 1280px){
@@ -775,7 +784,12 @@ main{
         align-items: center;
     }
     .secondnavFooter{
-        display: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .secondnavFooter ul li a{
+        font-size: 10px;
     }
 }
 /*  RESPONSIVE  HOME */
@@ -951,6 +965,19 @@ main{
     }
 }
 
+/* RESPONSIVE ADD DES PRESTATIONS ADMIN pour 1 PRESTATIONS CSS*/
+@media screen and (max-width: 1280px) {
+    .formulaireAddPrestation {
+        width: auto;
+    }
+}
+/* RESPONSIVE UPDATE DES PRESTATIONS ADMIN pour 1 PRESTATIONS CSS*/
+@media screen and (max-width: 1280px) {
+    .formulaireUpdatePrestation {
+        width: auto;
+    }
+}
+
 /*  RESPONSIVE PROFILES ADMIN HANDLER */
 @media screen and (max-width: 1280px) {
     .rubriqueProfiles {
@@ -965,6 +992,11 @@ main{
     }
 }
 /*  RESPONSIVE VOTRE PROFIL VIEW ONE PROFIL*/
+@media screen and (max-width: 760px) { /* A REGLER LE RESPONSIVE EN GALAXY FOLD 280px EN COURS */
+    .grandProfilOneViewFormular  {
+        width: auto;
+    }
+}
 @media screen and (max-width: 1280px) {
     .rubriqueProfile {
         align-items: center;
@@ -980,12 +1012,20 @@ main{
 /*  RESPONSIVE CHOICE FORMULAIRE PART - PROF */
 @media screen and (max-width: 860px) {
     .boxChoice{
+        width: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
     .choice{
         font-size: 25px;
+        text-align: center;
+    }
+    .part{
+        padding: 0;
+    }
+    .prof{
+        padding: 0;
     }
 }
 /*  RESPONSIVE FORMULAIRE APPOINTMENT PART - PROF */
@@ -1054,5 +1094,16 @@ main{
     .map{
         width: auto;
     }
-
+}
+/* style de FORMULAIRE REGISTER CSS*/
+@media screen and (max-width: 760px) {
+.fieldRegisterProfile {
+        width: auto;
+    }
+}
+/* style de FORMULAIRE LOGIN CSS*/
+@media screen and (max-width: 760px) {
+    .formulaireLogin {
+        width: auto;
+    }
 }
