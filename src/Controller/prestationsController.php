@@ -6,7 +6,7 @@ use App\Repository\PrestationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class prestationsController extends AbstractController
+class PrestationsController extends AbstractController
 {
     #[Route('/prestations', name: 'prestations', methods: ['GET', 'POST'])]
     public function prestations(PrestationRepository $prestationRepository)

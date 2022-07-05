@@ -2,15 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-//#[Route('/admin/profiles')]
-class profilesAdminController extends AbstractController
+class ProfilesAdminController extends AbstractController
 {
     #[Route('/profiles', name: 'view_Profiles', methods: ['GET', 'POST'])]
     public function viewProfiles(UserRepository $userRepository)
@@ -38,6 +36,7 @@ class profilesAdminController extends AbstractController
             'editFormUser' => $editFormUser->createView()
         ]);
     }
+
     #[Route('/profiles/remove/{id}', name: 'remove_user', methods: ['GET', 'POST'])]
     public function removeUser(UserRepository $userRepository, $id)
     {

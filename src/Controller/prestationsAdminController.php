@@ -5,16 +5,15 @@ namespace App\Controller;
 use App\Entity\Prestation;
 use App\Form\PrestationType;
 use App\Repository\PrestationRepository;
-use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/admin/prestation')]
-class prestationsAdminController extends AbstractController
+class PrestationsAdminController extends AbstractController
 {
     #[Route('/ajouter', name: 'addPresta')]
-    public function addPresta(PrestationRepository $prestationRepository, Request $request, UserRepository $userRepository)
+    public function addPresta(PrestationRepository $prestationRepository, Request $request)
     {
         if ($this->getUser()->getRoles() === ['ROLE_ADMIN']) {
             $prestation = new Prestation();
@@ -32,7 +31,6 @@ class prestationsAdminController extends AbstractController
             'formPrestation' => $formPrestation->createView()
         ]);
         } else {
-            //dd('coucou');
             return $this->render('security/home.html.twig');
         }
     }

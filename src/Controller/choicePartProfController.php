@@ -3,20 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\Appointment;
-use App\Entity\Prestation;
 use App\Form\PartAppointmentType;
 use App\Form\ProAppointmentType;
 use App\Repository\AppointmentRepository;
-use App\Repository\PrestationRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class choicePartProfController extends AbstractController
+class ChoicePartProfController extends AbstractController
 {
     #[Route('/{titlePresta}/statut', name: 'choicePartProf', methods: ['GET', 'POST'])]
-    public function choice(PrestationRepository $prestationRepository, $titlePresta)
+    public function choice($titlePresta)
     {
         return $this->render('pages/choicePartProf.html.twig', [
             'titlePresta' => $titlePresta
@@ -24,7 +21,7 @@ class choicePartProfController extends AbstractController
     }
 
     #[Route('/{titlePresta}/{FormulaireStatus}/formulaire', name: 'addFormular', methods: ['GET', 'POST'])]
-    public function addFormular(AppointmentRepository $appointmentRepository, Request $request, $titlePresta, $FormulaireStatus, EntityManagerInterface $entityManager)
+    public function addFormular(AppointmentRepository $appointmentRepository, Request $request, $titlePresta, $FormulaireStatus)
     {
         $appointment = new Appointment();
         $dateNow = new \DateTime('now');
@@ -49,7 +46,6 @@ class choicePartProfController extends AbstractController
                 $appointment->addPrestationaccessupdate($presta);
             }
             $appointmentRepository->add($appointment);
-            //dd($prestas, $appointmentRepository->findOneBy(['id'=>$appointment->getId()]));
 
             return $this->render('pages/resumePrestations.html.twig', [
                 'formAppointment' => $formAppointment->createView(),
@@ -70,7 +66,7 @@ class choicePartProfController extends AbstractController
     }
 
     #[Route('{titlePresta}/{FormulaireStatus}/formulaire/resume', name: 'resume', methods: ['GET', 'POST'])]
-    public function resumePrestation(AppointmentRepository $appointmentRepository, $titlePresta)
+    public function resumePrestation($titlePresta)
     {
         return $this->render('pages/resumePrestations.html.twig', [
             'titlePresta' => $titlePresta
