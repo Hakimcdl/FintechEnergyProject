@@ -13,26 +13,36 @@
             }) }}
             </div>
             {# <div class="{{ formPrestation.imgPrestations.vars.id }}" data-collection="{{ formPrestation.imgPrestations.vars.id }}">{{ form_row(formPrestation.imgPrestations) }}</div>#}
-            {# div class="m-3">
-            {{ form_row(formPrestation.imgPrestations.vars.prototype.img,{
+
+        <div id="email-fields-list"
+                data-prototype="{{ form_widget(formPrestation.imgPrestations.vars.prototype)|escape }}"
+                data-index="{{ formPrestation.imgPrestations|length }}">
+            {% for imgPrestationField in formPrestation.imgPrestations %}
+                <div class="m-3">
+            {{ form_row(imgPrestationField.img,{
                 label: 'Image :',
-                'full_name': 'prestation[imgPrestations][0][img]',
                 'attr':{
                     'class': 'addImageField form-control',
-                    }
+                }
             }) }}
             </div>
-            <div class="m-3">
-            {{ form_row(formPrestation.imgPrestations.vars.prototype.description,{
+                <div class="m-3">
+            {{ form_row(imgPrestationField.description,{
                 label: 'Description :',
-                'full_name': 'prestation[imgPrestations][0][description]',
                 'attr':{
                     'class': 'addDescriptionField form-control',
                 }
             }) }}
-            </div>#}
+            </div>
+            {% endfor %}
+            </div>
 
-            <div class="m-3">
+    <button type="button"
+            class="add-another-collection-widget"
+            data-list-selector="#email-fields-list">Add another email</button>
+
+
+            {#  <div class="m-3">
                 <div>
                     <label for="prestation_imgPrestations_[0]_img" class="required">Image :</label>
                     <select id="prestation_imgPrestations_[0]_img" name="prestation[imgPrestations][0][img]" class="addImageField form-control">
@@ -87,7 +97,7 @@
 
             <div><label for="prestation_imgPrestations_[1]_description" class="required">Description</label>
                 <textarea id="prestation_imgPrestations_[1]_description" name="prestation[imgPrestations][1][description]" required="required"></textarea>
-            </div>
+            </div>#}
         
 
             {# <div class="m-3">
@@ -108,4 +118,30 @@
         {{ form_end(formPrestation) }}
     </span>
 </body>
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        $.(document).ready(function () {
+            $.('.add-another-collection-widget').click(function (e) {
+                var list = $.($.(this).attr('data-list-selector'));
+                // Try to find the counter of the list or use the length of the list
+                var counter = list.data('widget-counter') || list.children().length;
+
+                // grab the prototype template
+                var newWidget = list.attr('data-prototype');
+                // replace the "__name__" used in the id and name of the prototype
+                // with a number that's unique to your emails
+                // end name attribute looks like name="contact[emails][2]"
+                newWidget = newWidget.replace(/__name__/g, counter);
+                // Increase the counter
+                counter++;
+                // And store it, the length cannot be used if deleting widgets is allowed
+                list.data('widget-counter', counter);
+
+                // create a new list element and add it to the list
+                var newElem = $.(list.attr('data-widget-tags')).html(newWidget);
+                newElem.appendTo(list);
+            });
+        });
+    </script>
 {% endblock %}
