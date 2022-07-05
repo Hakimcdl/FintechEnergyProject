@@ -16,9 +16,9 @@
 
 <main>
 <section class="myPrestations">
-     {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-success" href="{{ path('addPresta') }}">Créer une prestation</a> {% endif %}
+    {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-success" href="{{ path('addPresta') }}">Créer une prestation</a> {% endif %}
 
-     {% for prestation in prestations %}
+    {% for prestation in prestations %}
     <article id="{{ prestation.title|replace({' ':''}) }}">
         <h1 class="titleItem">{{ prestation.title }}</h1>
         {% if prestation.imgPrestations[0] is defined %}
@@ -43,7 +43,6 @@
             {% if is_granted('ROLE_ADMIN') %}
 
                 <div class="modal">
-                    {#  {{ dump(prestation.title) }}#}
                     <p>Voulez-vous vraiment supprimer la prestation ?</p>
                     <button class="cancel btn btn-primary" >Annuler</button>
                     {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-danger" href="{{ path('removePresta', {'title': prestation.title}) }}">Supprimer</a>{% endif %}
