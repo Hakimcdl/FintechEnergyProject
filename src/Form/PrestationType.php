@@ -24,6 +24,7 @@ class PrestationType extends AbstractType
                 'entry_type' => ImgPrestationType::class,
                 'entry_options' => ['label' => false],
                 'allow_add' => true,
+                'by_reference' => false,
             ])
 
             ->add('Valider', SubmitType::class)
