@@ -14,34 +14,33 @@ use Symfony\Component\Routing\Annotation\Route;
 class contactFormularController extends AbstractController
 {
     #[Route('/contact', name: 'contact', methods: ['GET', 'POST'])]
-    public function contact (ContactRepository $contactRepository)
+    public function contact(ContactRepository $contactRepository)
     {
-
         return $this->render('contactFormular.html.twig');
     }
 
     #[Route('/demandeContact', name: 'demandeContact', methods: ['GET', 'POST'])]
-    public function addContact (ContactRepository $contactRepository, UserRepository $userRepository, Request $request)
+    public function addContact(ContactRepository $contactRepository, UserRepository $userRepository, Request $request)
     {
         $contactRequest = new Contact();
         $dateNow = new \DateTime('now');
         $formContactRequest = $this->createForm(ContactFormularType::class, $contactRequest);
         $formContactRequest ->handleRequest($request);
-            if ($formContactRequest->isSubmitted() && $formContactRequest->isValid()){
-                $contactRepository  //->setRequestDate($dateNow) VOIR SI JE METS UN CHAMP "date request" DANS MA TABLE  ContactFormularType.
+        if ($formContactRequest->isSubmitted() && $formContactRequest->isValid()) {
+            $contactRepository  //->setRequestDate($dateNow) VOIR SI JE METS UN CHAMP "date request" DANS MA TABLE  ContactFormularType.
                                     ->add($contactRequest);
-                return $this->render('pages/resumeContact.html.twig',[
+            return $this->render('pages/resumeContact.html.twig', [
                     'request' => $request
                 ]);
-            }
-            return $this->render('formular/contactFormular.html.twig', [
+        }
+        return $this->render('formular/contactFormular.html.twig', [
                 'formContactRequest' => $formContactRequest->createView()
             ]);
     }
     #[Route('/demandeContact/resumeContact', name: 'resumeContact', methods: ['GET', 'POST'])]
-    public function resumeContact (ContactRepository $contactRepository, UserRepository $userRepository, Request $request)
+    public function resumeContact(ContactRepository $contactRepository, UserRepository $userRepository, Request $request)
     {
-        return $this->render('pages/resumeContact.html.twig',[
+        return $this->render('pages/resumeContact.html.twig', [
             'request' => $request
         ]);
     }

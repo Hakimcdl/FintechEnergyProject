@@ -18,7 +18,7 @@ class PartAppointmentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('prestationaccessupdate', EntityType::class,[
+            ->add('prestationaccessupdate', EntityType::class, [
                 'class'=>Prestation::class,
                 'choice_label' => 'title',
                 'expanded' => true,

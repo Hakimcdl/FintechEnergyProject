@@ -18,21 +18,20 @@ class choicePartProfController extends AbstractController
     #[Route('/{titlePresta}/statut', name: 'choicePartProf', methods: ['GET', 'POST'])]
     public function choice(PrestationRepository $prestationRepository, $titlePresta)
     {
-
-        return $this->render('pages/choicePartProf.html.twig',[
+        return $this->render('pages/choicePartProf.html.twig', [
             'titlePresta' => $titlePresta
         ]);
     }
 
     #[Route('/{titlePresta}/{FormulaireStatus}/formulaire', name: 'addFormular', methods: ['GET', 'POST'])]
-    public function addFormular (AppointmentRepository $appointmentRepository, Request $request, $titlePresta, $FormulaireStatus, EntityManagerInterface $entityManager)
+    public function addFormular(AppointmentRepository $appointmentRepository, Request $request, $titlePresta, $FormulaireStatus, EntityManagerInterface $entityManager)
     {
         $appointment = new Appointment();
         $dateNow = new \DateTime('now');
 
-        if ($FormulaireStatus === 'particulier' ){
+        if ($FormulaireStatus === 'particulier') {
             $formType = PartAppointmentType::class;
-        }else{
+        } else {
             $formType = ProAppointmentType::class;
         }
 
@@ -45,7 +44,8 @@ class choicePartProfController extends AbstractController
             $appointmentRepository->add($appointment);
 
             $prestas = $appointment->getPrestationaccessupdate();
-            foreach ($prestas as $presta){;
+            foreach ($prestas as $presta) {
+                ;
                 $appointment->addPrestationaccessupdate($presta);
             }
             $appointmentRepository->add($appointment);
@@ -56,12 +56,12 @@ class choicePartProfController extends AbstractController
                 'status' => $FormulaireStatus
             ]);
         }
-        if($formType === PartAppointmentType::class){
+        if ($formType === PartAppointmentType::class) {
             return $this->render('formular/formularAppointmentPart.html.twig', [
                 'formAppointment' => $formAppointment->createView(),
                 'status' => $FormulaireStatus
             ]);
-        }else{
+        } else {
             return $this->render('formular/formularAppointmentPro.html.twig', [
                     'formAppointment' => $formAppointment->createView(),
                     'status' => $FormulaireStatus
@@ -70,9 +70,9 @@ class choicePartProfController extends AbstractController
     }
 
     #[Route('{titlePresta}/{FormulaireStatus}/formulaire/resume', name: 'resume', methods: ['GET', 'POST'])]
-    public function resumePrestation (AppointmentRepository $appointmentRepository, $titlePresta)
+    public function resumePrestation(AppointmentRepository $appointmentRepository, $titlePresta)
     {
-        return $this->render('pages/resumePrestations.html.twig',[
+        return $this->render('pages/resumePrestations.html.twig', [
             'titlePresta' => $titlePresta
         ]);
     }

@@ -24,10 +24,10 @@ class homeController extends AbstractController
     #[Route('/profil', name: 'view_profil', methods: ['GET', 'POST'])]
     public function voirProfil(UserRepository $userRepository)
     {
-      $idUser = $this->getUser()->getId();
-      $user = $userRepository->findOneBy(['id'=>$idUser]);
+        $idUser = $this->getUser()->getId();
+        $user = $userRepository->findOneBy(['id'=>$idUser]);
 
-      return $this->render('viewOneProfil.html.twig' , [
+        return $this->render('viewOneProfil.html.twig', [
           'user' => $user
       ]);
     }
@@ -35,35 +35,33 @@ class homeController extends AbstractController
     #[Route('/modifierProfil/{id}', name: 'updateProfil', methods: ['GET', 'POST'])]
     public function updateProfil(UserRepository $userRepository, Request $request, $id)
     {
-            $updateUser = $userRepository->findOneBy(['id' => $id]);
-            $editFormUser = $this->createForm(RegistrationFormType::class, $updateUser);
-            $editFormUser ->handleRequest($request);
+        $updateUser = $userRepository->findOneBy(['id' => $id]);
+        $editFormUser = $this->createForm(RegistrationFormType::class, $updateUser);
+        $editFormUser ->handleRequest($request);
 
-            if ($editFormUser->isSubmitted() && $editFormUser->isValid()) {
-                $userRepository ->add($updateUser);
-                return $this->redirectToRoute('view_profil');
+        if ($editFormUser->isSubmitted() && $editFormUser->isValid()) {
+            $userRepository ->add($updateUser);
+            return $this->redirectToRoute('view_profil');
         }
-            return $this->render('pages/updateOneProfile.html.twig',[
+        return $this->render('pages/updateOneProfile.html.twig', [
                     'editFormUser' => $editFormUser->createview()
                 ]);
     }
 
-    #[Route('/profil/remove/{id}', name: 'remove_user_id' )]
+    #[Route('/profil/remove/{id}', name: 'remove_user_id')]
     public function removeUserId(UserRepository $userRepository, $id, Request $request)
     {
         // $this va chercher la fonction get user par son id ou va récupérer le roles de l'admin
-        if ($this->getUser()->getId() == $id ) {
+        if ($this->getUser()->getId() == $id) {
             // récupère les id de touts les membres grace a la table user
             $userRemove = $userRepository->findOneBy(['id' => $id]);
 
             $userRepository->remove($userRemove);
-                $request->getSession()->invalidate();
-                return $this->redirectToRoute('home');
-
+            $request->getSession()->invalidate();
+            return $this->redirectToRoute('home');
         } else {
             // redirection vers la page d'erreur
             return $this->redirectToRoute('home');
         }
-
     }
 }

@@ -24,7 +24,7 @@ class ProAppointmentType extends AbstractType
                 'expanded' => true,
                 'multiple'=>true
             ])
-            ->add('residencyaccessupdate', EntityType::class,[
+            ->add('residencyaccessupdate', EntityType::class, [
                 'class'=>Residency::class,
                 'choice_label'=>'name'
             ])
