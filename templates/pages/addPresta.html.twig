@@ -1,129 +1,61 @@
 {% extends 'base.html.twig' %}
-{% block title %}Ajouter une prestation{% endblock %}
-{% block body %}
 
+{% block title %}Ajouter une prestation{% endblock %}
+
+{% block body %}
 <body>
-<h1>Ajouter une prestation</h1>
+    <h1>Ajouter une prestation</h1>
     <span class="formulaireAddPrestation">
         {{ form_start(formPrestation) }}
             <div class="m-3">
-            {{ form_row(formPrestation.title,{
-                label: 'Titre :',
-                'attr':{'class': 'addPrestationField form-control'}
-            }) }}
+                {{ form_row(formPrestation.title, {
+                    label: 'Titre :',
+                    'attr':{'class': 'addPrestationField form-control'}
+                }) }}
             </div>
-            {# <div class="{{ formPrestation.imgPrestations.vars.id }}" data-collection="{{ formPrestation.imgPrestations.vars.id }}">{{ form_row(formPrestation.imgPrestations) }}</div>#}
 
-        <div id="email-fields-list"
+            <div
+                id="email-fields-list"
                 data-prototype="{{ form_widget(formPrestation.imgPrestations.vars.prototype)|escape }}"
-                data-index="{{ formPrestation.imgPrestations|length }}">
-            {% for imgPrestationField in formPrestation.imgPrestations %}
-                <div class="m-3">
-            {{ form_row(imgPrestationField.img,{
-                label: 'Image :',
-                'attr':{
-                    'class': 'addImageField form-control',
-                }
-            }) }}
-            </div>
-                <div class="m-3">
-            {{ form_row(imgPrestationField.description,{
-                label: 'Description :',
-                'attr':{
-                    'class': 'addDescriptionField form-control',
-                }
-            }) }}
-            </div>
-            {% endfor %}
-            </div>
-
-    <button type="button"
-            class="add-another-collection-widget"
-            data-list-selector="#email-fields-list">Add another email</button>
-
-
-            {#  <div class="m-3">
-                <div>
-                    <label for="prestation_imgPrestations_[0]_img" class="required">Image :</label>
-                    <select id="prestation_imgPrestations_[0]_img" name="prestation[imgPrestations][0][img]" class="addImageField form-control">
-                    <option value="1">img_operation/isolation-comble.jpg</option>
-                    <option value="2">img_operation/Isolation_Panneaux_de_toiture.jpg</option>
-                    <option value="3">img_operation/isolation_murs_interieurs.jpg</option>
-                    <option value="4">img_operation/isolation-plancher.png</option>
-                    <option value="5">img_operation/iso_fenetre_pvc.jpg</option>
-                    <option value="6">img_operation/fermeture fenetre.jpg</option>
-                    <option value="7">img_operation/image-particulier.png</option>
-                    <option value="8">image-federationProf.png</option>
-                    <option value="9">img_operation/panneaux-solaires.jpg</option>
-                    <option value="10">img_operation/chauffe_eau_solaire.jpg</option>
-                    <option value="11">img_technique/isolation-comble.jpg</option>
-                    <option value="12">img_technique/Isolation_Panneaux_de_toiture.jpg</option>
-                    <option value="13">img_technique/isolation_murs_interieurs.jpg</option>
-                    <option value="14">img_technique/isolation-plancher.png</option>
-                    <option value="15">img_technique/iso_fenetre_pvc.jpg</option>
-                    <option value="16">img_technique/fermeture fenetre.jpg</option>
-                    <option value="17">img_technique/panneaux-solaires.jpg</option>
-                    <option value="18">img_technique/chauffe_eau_solaire.jpg</option>
-                    </select>
-                </div>
+                data-index="{{ formPrestation.imgPrestations|length }}"
+            >
+                {% for imgPrestationField in formPrestation.imgPrestations %}
+                    <div class="m-3">
+                        {{ form_row(imgPrestationField.img, {
+                            label: 'Image :',
+                            'attr': {
+                                'class': 'addImageField form-control',
+                            }
+                        }) }}
+                    </div>
+                    <div class="m-3">
+                        {{ form_row(imgPrestationField.description, {
+                            label: 'Description :',
+                            'attr': {
+                                'class': 'addDescriptionField form-control',
+                            }
+                        }) }}
+                    </div>
+                {% endfor %}
             </div>
 
-        {{ form_row(formPrestation.imgPrestations.vars.prototype.description)}}
-            <div class="m-3">
-                <div>
-                    <label for="prestation_imgPrestations_[1]_img" class="required">Image :</label>
-                    <select id="prestation_imgPrestations_[1]_img" name="prestation[imgPrestations][1][img]" class="addImageField form-control">
-                    <option value="1">img_operation/isolation-comble.jpg</option>
-                    <option value="2">img_operation/Isolation_Panneaux_de_toiture.jpg</option>
-                    <option value="3">img_operation/isolation_murs_interieurs.jpg</option>
-                    <option value="4">img_operation/isolation-plancher.png</option>
-                    <option value="5">img_operation/iso_fenetre_pvc.jpg</option>
-                    <option value="6">img_operation/fermeture fenetre.jpg</option>
-                    <option value="7">img_operation/image-particulier.png</option>
-                    <option value="8">image-federationProf.png</option>
-                    <option value="9">img_operation/panneaux-solaires.jpg</option>
-                    <option value="10">img_operation/chauffe_eau_solaire.jpg</option>
-                    <option value="11">img_technique/isolation-comble.jpg</option>
-                    <option value="12">img_technique/Isolation_Panneaux_de_toiture.jpg</option>
-                    <option value="13">img_technique/isolation_murs_interieurs.jpg</option>
-                    <option value="14">img_technique/isolation-plancher.png</option>
-                    <option value="15">img_technique/iso_fenetre_pvc.jpg</option>
-                    <option value="16">img_technique/fermeture fenetre.jpg</option>
-                    <option value="17">img_technique/panneaux-solaires.jpg</option>
-                    <option value="18">img_technique/chauffe_eau_solaire.jpg</option>
-                    </select>
-                </div>
-            </div>
-
-            <div><label for="prestation_imgPrestations_[1]_description" class="required">Description</label>
-                <textarea id="prestation_imgPrestations_[1]_description" name="prestation[imgPrestations][1][description]" required="required"></textarea>
-            </div>#}
-        
-
-            {# <div class="m-3">
-            {{ form_row(formPrestation.imgPrestations.vars.prototype.img,{
-                label: 'Image :',
-                'full_name': 'prestation[imgPrestations][1][img]',
-                'attr':{'class': 'addImageField form-control'}
-            }) }}
-            </div>
-            <div class="m-3">
-            {{ form_row(formPrestation.imgPrestations.vars.prototype.description,{
-                label: 'Description :',
-                'full_name': 'prestation[imgPrestations][1][description]',
-                'attr':{'class': 'addDescriptionField form-control'}
-            }) }}
-            </div>#}
-
+            <button
+                type="button"
+                class="add-another-collection-widget"
+                data-list-selector="#email-fields-list"
+            >
+                Add another email
+            </button>
         {{ form_end(formPrestation) }}
     </span>
 </body>
 {% endblock %}
+
 {% block javascripts %}
     <script type="text/javascript">
-        $.(document).ready(function () {
-            $.('.add-another-collection-widget').click(function (e) {
-                var list = $.($.(this).attr('data-list-selector'));
+        $(document).ready(function () {
+            $('.add-another-collection-widget').click(function (e) {
+                var list = $($(this).attr('data-list-selector'));
                 // Try to find the counter of the list or use the length of the list
                 var counter = list.data('widget-counter') || list.children().length;
 
@@ -139,7 +71,7 @@
                 list.data('widget-counter', counter);
 
                 // create a new list element and add it to the list
-                var newElem = $.(list.attr('data-widget-tags')).html(newWidget);
+                var newElem = $(list.attr('data-widget-tags')).html(newWidget);
                 newElem.appendTo(list);
             });
         });
