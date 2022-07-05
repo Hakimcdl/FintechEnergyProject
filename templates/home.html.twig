@@ -78,7 +78,7 @@
             {% for prestation in prestations %}
             <article class="card allcards">
                 <h3>{{ prestation.title }}</h3>
-                <span><a href="{{ path('prestation', {'title': prestation.title}) }}">
+                <span><a href="{{ path('prestation', { 'title': prestation.title }) }}">
                             <img src="{{ asset('asset/img/img_article/vertmaison.png') }}" alt="icons"></a></span>
             </article>
             {% endfor %}

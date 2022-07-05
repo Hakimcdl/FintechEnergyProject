@@ -23,7 +23,7 @@ class ProfilesAdminController extends AbstractController
     #[Route('/profiles/update/{id}', name: 'update_user', methods: ['GET', 'POST'])]
     public function updateUser(UserRepository $userRepository, Request $request, $id)
     {
-        if ($this ->getUser()->getRoles() === ['ROLE_ADMIN']) {
+        if ($this->isGranted('ROLE_ADMIN')) {
             $updateUser = $userRepository->findOneBy(['id' => $id]);
             $editFormUser = $this->createForm(RegistrationFormType::class, $updateUser);
             $editFormUser ->handleRequest($request);
@@ -41,7 +41,7 @@ class ProfilesAdminController extends AbstractController
     public function removeUser(UserRepository $userRepository, $id)
     {
         // $this va chercher la fonction get user par son id et va récupérer le roles de l'admin
-        if ($this->getUser()->getId() == $id || $this->getUser()->getRoles() === ['ROLE_ADMIN']) {
+        if ($this->isGranted('ROLE_ADMIN')) {
             // Cela récupère les id de touts les membres grace a la table user
             $userRemove = $userRepository->findOneBy(['id' => $id]);
 

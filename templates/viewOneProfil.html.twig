@@ -11,14 +11,14 @@
         <p class="profilNameField fw-bolder">Votre nom : {{ user.lastname }}</p>
         <p class="profilEmailField fw-bolder">Adresse email: {{ user.email }}</p>
 
-        <a class="btn btn-success" href="{{ path('updateProfil', {'id': app.user.id}) }}">Modifier profil</a>
+        <a class="btn btn-success" href="{{ path('updateProfil', { 'id': app.user.id }) }}">Modifier profil</a>
 
         <button  class="delete del btn btn-danger mt-3">Supprimer profil</button>
 
         <div class="modal">
             <p>Voulez-vous vraiment supprimer votre profil ?</p>
             <button class="cancel btn btn-primary">Annuler</button>
-            <a href="{{ path('remove_user_id', {'id':user.id } ) }}" class="deleteUser btn btn-danger">Supprimer</a>
+            <a href="{{ path('remove_user_id', { 'id':user.id } ) }}" class="deleteUser btn btn-danger">Supprimer</a>
         </div>
     </div>
 </div>

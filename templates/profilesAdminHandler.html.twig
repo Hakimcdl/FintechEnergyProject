@@ -12,7 +12,7 @@
                 <p class="profilAdminEmailField fw-bolder">Adresse email : {{ user.email }}</p>
             </div>
             {% if is_granted('ROLE_ADMIN') %}
-                <a class="btn btn-success m-3" href="{{ path('update_user', {'id': user.id}) }}">Modifier l'utilisateur</a>
+                <a class="btn btn-success m-3" href="{{ path('update_user', { 'id': user.id }) }}">Modifier l'utilisateur</a>
             {% endif %}
             {% if is_granted('ROLE_ADMIN') %}
                 <button  class="del btn btn-danger m-3">Supprimer l'utilisateur</button>
@@ -21,7 +21,7 @@
             <div class="modal">
                 <p>Voulez-vous vraiment supprimer cet utilisateur ?</p>
                 <button class="cancel btn btn-primary">Annuler</button>
-                <a href="{{ path('remove_user', {'id':user.id } ) }}" class="deleteUser btn btn-danger">Supprimer</a>
+                <a href="{{ path('remove_user', { 'id':user.id } ) }}" class="deleteUser btn btn-danger">Supprimer</a>
             </div>
         </div>
     {% endfor %}
