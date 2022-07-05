@@ -27,9 +27,6 @@ class PrestationType extends AbstractType
             ])
 
             ->add('Valider', SubmitType::class)
-            //->add('dateCreation')
-            //->add('active')
-            //->add('user')
         ;
     }
 

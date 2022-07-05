@@ -7,37 +7,37 @@
     <span class="formulaireUpdatePrestation">
         {{ form_start(editFormPresta) }}
              <div class="m-3">
-            {{ form_row(editFormPresta.title,{
+            {{ form_row(editFormPresta.title, {
                 label: 'Titre :',
-                'attr':{'class': 'updatePrestationField form-control'}
+                'attr': { 'class': 'updatePrestationField form-control' }
             }) }}
             </div>
 
             <div class="m-3">
-            {{ form_row(editFormPresta.imgPrestations[0].img,{
+            {{ form_row(editFormPresta.imgPrestations[0].img, {
                 label: 'Image :',
-                'attr':{'class': 'updateImageField form-control'}
+                'attr': { 'class': 'updateImageField form-control' }
             }) }}
             </div>
 
             <div class="m-3">
-            {{ form_row(editFormPresta.imgPrestations[0].description,{
+            {{ form_row(editFormPresta.imgPrestations[0].description, {
                 label: 'Description :',
-                'attr':{'class': 'updateDescriptionField form-control'}
+                'attr': { 'class': 'updateDescriptionField form-control' }
             }) }}
             </div>
 
         <div class="m-3">
-            {{ form_row(editFormPresta.imgPrestations[1].img,{
+            {{ form_row(editFormPresta.imgPrestations[1].img, {
                 label: 'Image :',
-                'attr':{'class': 'updateImageField form-control'}
+                'attr': { 'class': 'updateImageField form-control' }
             }) }}
             </div>
 
             <div class="m-3">
-            {{ form_row(editFormPresta.imgPrestations[1].description,{
+            {{ form_row(editFormPresta.imgPrestations[1].description, {
                 label: 'Description :',
-                'attr':{'class': 'updateDescriptionField form-control'}
+                'attr': { 'class': 'updateDescriptionField form-control' }
             }) }}
             </div>
         {{ form_end(editFormPresta) }}

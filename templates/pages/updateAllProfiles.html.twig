@@ -8,21 +8,21 @@
     <span class="fieldUpdateAllProfiles">
         {{ form_start(editFormUser) }}
             <div class="m-3">
-                {{ form_row(editFormUser.lastname,{
+                {{ form_row(editFormUser.lastname, {
                     label: 'Nom :',
-                    'attr':{'class': 'allProfilesNameField form-control'}
+                    'attr': { 'class': 'allProfilesNameField form-control' }
                 }) }}
             </div>
             <div class="m-3">
-                {{ form_row(editFormUser.email,{
+                {{ form_row(editFormUser.email, {
                     label: 'Courriel :',
-                    'attr':{'class': 'allProfilesEmailField form-control'}
+                    'attr': { 'class': 'allProfilesEmailField form-control' }
                 }) }}
             </div>
             <div class="m-3">
-                {{ form_row(editFormUser.plainPassword,{
+                {{ form_row(editFormUser.plainPassword, {
                     label: 'Mot de passe :',
-                    'attr':{'class': 'allProfilesPasswordField form-control'}
+                    'attr': { 'class': 'allProfilesPasswordField form-control' }
                 }) }}
             </div>
             <input type="submit" value="Envoyer">

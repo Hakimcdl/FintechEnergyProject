@@ -9,21 +9,21 @@
     <span class="fieldUpdateOneProfile">
         {{ form_start(editFormUser) }}
             <div class="m-3">
-                {{ form_row(editFormUser.lastname,{
+                {{ form_row(editFormUser.lastname, {
                     label: 'Nom :',
-                    'attr':{'class': 'oneProfilesNameField form-control'}
+                    'attr': { 'class': 'oneProfilesNameField form-control' }
                 }) }}
             </div>
             <div class="m-3">
-                {{ form_row(editFormUser.email,{
+                {{ form_row(editFormUser.email, {
                     label: 'Courriel :',
-                    'attr':{'class': 'OneProfilesEmailField form-control'}
+                    'attr': { 'class': 'OneProfilesEmailField form-control' }
                 }) }}
             </div>
             <div class="m-3">
-            {{ form_row(editFormUser.plainPassword,{
+            {{ form_row(editFormUser.plainPassword, {
                     label: 'Mot de passe :',
-                    'attr':{'class': 'OneProfilesPasswordField form-control'}
+                    'attr': { 'class': 'OneProfilesPasswordField form-control' }
                 }) }}
             </div>
             <div class="m-3">

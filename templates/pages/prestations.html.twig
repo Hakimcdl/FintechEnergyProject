@@ -9,7 +9,7 @@
 
     <section class="sixprestations">
         {% for prestation in prestations %}
-        <a class="isoP" href="#{{ prestation.title|replace({' ':''}) }}">{{ prestation.title }}</a>
+        <a class="isoP" href="#{{ prestation.title|replace({' ': '' }) }}">{{ prestation.title }}</a>
         {% endfor %}
     </section>
 
@@ -19,7 +19,7 @@
                 prestation</a> {% endif %}
 
             {% for prestation in prestations %}
-            <article id="{{ prestation.title|replace({' ':''}) }}">
+            <article id="{{ prestation.title|replace({' ': '' }) }}">
                 <h1 class="titleItem">{{ prestation.title }}</h1>
                 {% if prestation.imgPrestations[0] is defined %}
                 <div class="prestaTxtBtn card text-center">
@@ -61,7 +61,9 @@
             <a href="#top"><img src="../public/asset/img/img_article/go-home-arrow.png" alt="Retourner en haut" /></a>
         </div>
     </main>
-
 </body>
-<script src="{{ asset(" asset/js/modalAdminDeletePrestations.js") }}"></script>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset(" asset/js/modalAdminDeletePrestations.js") }}"></script>
 {% endblock %}
