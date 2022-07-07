@@ -9,13 +9,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-//#[Route('/admin/profiles')]
+#[Route('/admin')]
 class profilesAdminController extends AbstractController
 {
     #[Route('/profiles', name: 'view_Profiles', methods: ['GET', 'POST'])]
     public function viewProfiles(UserRepository $userRepository)
     {
-        // récupère tout les utilisateurs de la table UserRepository
+        // récupère touts les utilisateurs de la table UserRepository
         $users = $userRepository->findAll();
         return $this->render('profilesAdminHandler.html.twig', [
             'users' => $users
@@ -46,10 +46,7 @@ class profilesAdminController extends AbstractController
             $userRemove = $userRepository->findOneBy(['id' => $id]);
 
             $remove = $userRepository->remove($userRemove);
-            if ($remove == true) {
-                return $this->redirectToRoute('view_Profiles');
-            }
-            return $this->redirectToRoute('view_Profiles');
         }
+        return $this->redirectToRoute('view_Profiles');
     }
 }

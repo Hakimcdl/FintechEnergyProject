@@ -7,17 +7,18 @@ use App\Repository\PrestationRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class homeController extends AbstractController
 {
     #[Route('/', name: 'home', methods: ['GET', 'POST'])]
-    public function home(PrestationRepository $prestationRepository)
+    public function home(PrestationRepository $prestationRepository): Response
     {
-        $prestations = $prestationRepository->findBy(array(), null);
+     $prestations = $prestationRepository->findBy(array(), null);
 
         return $this->render('home.html.twig', [
-            'prestations' => $prestations
+          'prestations' => $prestations
         ]);
     }
 
@@ -49,21 +50,20 @@ class homeController extends AbstractController
     }
 
     #[Route('/profil/remove/{id}', name: 'remove_user_id' )]
-    public function removeUserId(UserRepository $userRepository, $id, Request $request)
+    public function removeUserId(UserRepository $userRepository, $id)
     {
         // $this va chercher la fonction get user par son id ou va récupérer le roles de l'admin
-        if ($this->getUser()->getId() == $id ) {
+        if ($this->getUser()->getId() == $id) {
             // récupère les id de touts les membres grace a la table user
-            $userRemove = $userRepository->findOneBy(['id' => $id]);
-
-            $userRepository->remove($userRemove);
-                $request->getSession()->invalidate();
+            $removeUser = $userRepository->findOneBy(['id' => $id]);
+            $remove = $userRepository->remove($removeUser);
+            if ($remove == true) {
                 return $this->redirectToRoute('home');
-
-        } else {
-            // redirection vers la page d'erreur
+            }
             return $this->redirectToRoute('home');
-        }
 
-    }
+        }
+            /*  $request->getSession()->invalidate(); *
+            /*return $this->redirectToRoute('home'); */
+        }
 }

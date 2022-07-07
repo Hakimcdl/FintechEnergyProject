@@ -18,7 +18,6 @@ class choicePartProfController extends AbstractController
     #[Route('/{titlePresta}/statut', name: 'choicePartProf', methods: ['GET', 'POST'])]
     public function choice(PrestationRepository $prestationRepository, $titlePresta)
     {
-
         return $this->render('pages/choicePartProf.html.twig',[
             'titlePresta' => $titlePresta
         ]);
