@@ -1,29 +1,36 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Gestion des profils{% endblock %}
+
 {% block body %}
 <main>
     <h1 class="rubriqueProfiles">Voici la liste des profils utilisateurs :</h1>
-           {% for user in users %}
+    {% for user in users %}
+        <div class="profileAdminUsers">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <p class="profilAdminNameField fw-bolder">Votre nom : {{ user.lastname }}</p>
+                <p class="profilAdminEmailField fw-bolder">Adresse email : {{ user.email }}</p>
+            </div>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a class="btn btn-success m-3" href="{{ path('update_user', { 'id': user.id }) }}">Modifier l'utilisateur</a>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <button  class="del btn btn-danger m-3">Supprimer l'utilisateur</button>
+            {% endif %}
 
-               <div class="profileAdminUsers">
-                   <div class="d-flex flex-column justify-content-center align-items-center">
-                       <p class="profilAdminNameField fw-bolder">Votre nom : {{ user.lastname }}</p>
-                       <p class="profilAdminEmailField fw-bolder">Adresse email : {{ user.email }}</p>
-                   </div>
-                   {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-success m-3" href="{{ path('update_user',{'id': user.id}) }}">Modifier l'utilisateur</a>{% endif %}
-                   {% if is_granted('ROLE_ADMIN') %} <button  class="del btn btn-danger m-3">Supprimer l'utilisateur</button>{% endif %}
-
-                        <div class="modal">
-                        {#  {{ dump(user.lastname) }}#}
-                            <p>Voulez-vous vraiment supprimer cet utilisateur ?</p>
-                            <button class="cancel btn btn-primary">Annuler</button>
-                            <a href="{{ path('remove_user', {'id':user.id } ) }}" class="deleteUser btn btn-danger">Supprimer</a>
-                        </div>
-               </div>
-                {% endfor %}
+            <div class="modal">
+                <p>Voulez-vous vraiment supprimer cet utilisateur ?</p>
+                <button class="cancel btn btn-primary">Annuler</button>
+                <a href="{{ path('remove_user', { 'id':user.id } ) }}" class="deleteUser btn btn-danger">Supprimer</a>
+            </div>
+        </div>
+    {% endfor %}
 </main>
-    <div id="scroll_to_top">
-        <a href="#top"><img src="../public/asset/img/img_article/go-home-arrow.png" alt="Retourner en haut" /></a>
-    </div>
-    <script src="{{ asset("asset/js/modalAdminDeleteUser.js") }}"></script>
+<div id="scroll_to_top">
+    <a href="#top"><img src="{{ asset('asset/img/img_article/go-home-arrow.png') }}" alt="Retourner en haut" /></a>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('asset/js/modalAdminDeleteUser.js') }}"></script>
 {% endblock %}

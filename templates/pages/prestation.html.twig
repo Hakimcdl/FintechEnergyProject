@@ -1,24 +1,27 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Voir une prestation{% endblock %}
+
 {% block body %}
 <body>
-<section>
-    <article class="presentationPrestation">
-        <div class="rubriquePrestation">Voici notre fiche technique d'isolation :</div>
-    </article>
+    <section>
+        <article class="presentationPrestation">
+            <div class="rubriquePrestation">Voici notre fiche technique d'isolation :</div>
+        </article>
 
-    <article class="isolation">
-        <h1>{{ presta.title }}</h1>
-        <div class="prestation">
-            {% for imgPrestation in presta.imgPrestations %}
-            <div class="description">
-                <img src="{{ asset('asset/img/'~imgPrestation.img.title) }}" alt="image d'opérations énergétiques">
-                <p>{{ imgPrestation.description }}</p>
+        <article class="isolation">
+            <h1>{{ presta.title }}</h1>
+            <div class="prestation">
+                {% for imgPrestation in presta.imgPrestations %}
+                <div class="description">
+                    <img src="{{ asset('asset/img/'~imgPrestation.img.title) }}" alt="image d'opérations énergétiques">
+                    <p>{{ imgPrestation.description }}</p>
+                </div>
+                {% endfor %}
+                <a class="btn btn-primary my-5"
+                    href="{{ path('choicePartProf', { 'titlePresta': presta.title }) }}">Contactez-nous</a>
             </div>
-            {% endfor %}
-            <a class="btn btn-primary my-5" href="{{ path('choicePartProf', {'titlePresta': presta.title}) }}">Contactez-nous</a>
-        </div>
-    </article>
-</section>
+        </article>
+    </section>
 </body>
 {% endblock %}

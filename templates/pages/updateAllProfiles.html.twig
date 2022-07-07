@@ -1,34 +1,32 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Mettre à jour votre profil{% endblock %}
+
 {% block body %}
-
-    <body>
-
+<body>
     <h1>Modifier le profil de cet utilisateur</h1>
-    {#<div class="formulaireUpdateAllProfiles">#}
-        <span class="fieldUpdateAllProfiles">
-            {{ form_start(editFormUser) }}
-                <div class="m-3">
-                {{ form_row(editFormUser.lastname,{
+    <span class="fieldUpdateAllProfiles">
+        {{ form_start(editFormUser) }}
+            <div class="m-3">
+                {{ form_row(editFormUser.lastname, {
                     label: 'Nom :',
-                    'attr':{'class': 'allProfilesNameField form-control'}
+                    'attr': { 'class': 'allProfilesNameField form-control' }
                 }) }}
-                </div>
-                <div class="m-3">
-                {{ form_row(editFormUser.email,{
+            </div>
+            <div class="m-3">
+                {{ form_row(editFormUser.email, {
                     label: 'Courriel :',
-                    'attr':{'class': 'allProfilesEmailField form-control'}
+                    'attr': { 'class': 'allProfilesEmailField form-control' }
                 }) }}
-                </div>
-                <div class="m-3">
-                {{ form_row(editFormUser.plainPassword,{
+            </div>
+            <div class="m-3">
+                {{ form_row(editFormUser.plainPassword, {
                     label: 'Mot de passe :',
-                    'attr':{'class': 'allProfilesPasswordField form-control'}
+                    'attr': { 'class': 'allProfilesPasswordField form-control' }
                 }) }}
-                </div>
-                <input type="submit" value="Envoyer">
-            {{ form_end(editFormUser) }}
-        </span>
-    {#</div>#}
-    </body>
+            </div>
+            <input type="submit" value="Envoyer">
+        {{ form_end(editFormUser) }}
+    </span>
+</body>
 {% endblock %}

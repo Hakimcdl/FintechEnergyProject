@@ -1,8 +1,8 @@
 security:
     role_hierarchy:
-        ROLE_USER: [ ROLE_USER ]
-        ROLE_ADMIN: [ ROLE_ADMIN ]
-        ROLE_SUPERADMIN: [ ROLE_SUPERADMIN ]
+        # ROLE_USER: [ ROLE_USER ]
+        ROLE_ADMIN: [ ROLE_USER ]
+        ROLE_SUPERADMIN: [ ROLE_ADMIN ]
 
 
     enable_authenticator_manager: true
@@ -42,7 +42,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
              - { path: ^/admin, roles: ROLE_ADMIN }
-             - { path: ^/profile, roles: [ ROLE_USER , ROLE_ADMIN ] }
+             - { path: ^/profile, roles: [ ROLE_USER, ROLE_ADMIN ] }
 when@test:
     security:
         password_hashers:

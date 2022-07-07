@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Choisir son profil{% endblock %}
+
 {% block body %}
 <body>
     <main>
@@ -7,16 +9,17 @@
 
         <section class="boxChoice">
             <div class="part">
-            <a href="{{ path('addFormular', {'FormulaireStatus': 'particulier', 'titlePresta' : titlePresta}) }}">
-                <img src="{{ asset('asset/img/img_fond/image-particulier.png') }}" alt="image particulier"></a>
+                <a href="{{ path('addFormular', { 'FormulaireStatus': 'particulier', 'titlePresta': titlePresta }) }}">
+                    <img src="{{ asset('asset/img/img_fond/image-particulier.png') }}" alt="image particulier">
+                </a>
             </div>
 
             <div class="prof">
-            <a href="{{ path('addFormular', {'FormulaireStatus': 'professionnel', 'titlePresta' : titlePresta}) }}">
-                <img src="{{ asset('asset/img/img_fond/image-federationProf.png') }}" alt="image professionnelle"></a>
+                <a href="{{ path('addFormular', { 'FormulaireStatus': 'professionnel', 'titlePresta': titlePresta }) }}">
+                    <img src="{{ asset('asset/img/img_fond/image-federationProf.png') }}" alt="image professionnelle">
+                </a>
             </div>
         </section>
     </main>
 </body>
-
 {% endblock %}

@@ -1,91 +1,88 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Formulaire rendez-vous{% endblock %}
-{% block stylesheets%}
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+{% endblock %}
+
+{% block javascripts %}
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script type="text/javascript">
-        $.datepicker.setDefaults(
-            {
-                altField: "#datepicker",
-                closeText: 'Fermer',
-                prevText: 'Précédent',
-                nextText: 'Suivant',
-                currentText: 'Aujourd\'hui',
-                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
-                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
-                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
-                weekHeader: 'Sem.',
-                dateFormat: 'dd/mm/yy'
-            }
-        );
+        $.datepicker.setDefaults({
+            altField: "#datepicker",
+            closeText: 'Fermer',
+            prevText: 'Précédent',
+            nextText: 'Suivant',
+            currentText: 'Aujourd\'hui',
+            monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+            monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+            dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+            dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+            dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+            weekHeader: 'Sem.',
+            dateFormat: 'dd/mm/yy'
+        });
+        $(function() {
+            $(".callBackRequestField").datepicker();
+        });
     </script>
-    <script>
-        $( function() {
-            $( ".callBackRequestField" ).datepicker();
-        } );
-    </script>
-{% endblock %}
-{%  block javascripts %}
 {% endblock %}
 
 {% block body %}
     <body>
-            <div class="titleAppointement">
-                <h1>Veuillez remplir le formulaire d'enregistrement de l'opération énergétique et prise de RDV pour {{ status }}</h1>
-            </div>
+        <div class="titleAppointement">
+            <h1>Veuillez remplir le formulaire d'enregistrement de l'opération énergétique et prise de RDV pour {{ status }}</h1>
+        </div>
 
-            <div class="formularAppointment">
+        <div class="formularAppointment">
 
-                {{ form_start(formAppointment) }}
-                    {{ form_row(formAppointment.prestationaccessupdate,{
-                        label: 'Choisissez vos opérations énergétiques :',
-                        'attr':{'class': 'prestationaccessupdateField'}
+            {{ form_start(formAppointment) }}
+                {{ form_row(formAppointment.prestationaccessupdate, {
+                    label: 'Choisissez vos opérations énergétiques :',
+                    'attr': { 'class': 'prestationaccessupdateField' }
+                }) }}
+                {{ form_row(formAppointment.residencyaccessupdate, {
+                    label: 'Choisissez votre mode d\'habitation :',
+                    'attr': { 'class': 'residencyaccessupdateField' }
+                }) }}
+                {{ form_row(formAppointment.firstname, {
+                    label: 'Prénom',
+                    'attr': { 'class': 'firstnameField form-control' }
+                }) }}
+                {{ form_row(formAppointment.lastname, {
+                    label: 'Nom',
+                    'attr': { 'class': 'lastnameField form-control' }
+                }) }}
+                {{ form_row(formAppointment.postalAdress, {
+                        label: 'Adresse postale',
+                        'attr': { 'class': 'postalAdressField form-control' }
                     }) }}
-                    {{ form_row(formAppointment.residencyaccessupdate,{
-                        label: 'Choisissez votre mode d\'habitation :',
-                        'attr':{'class': 'residencyaccessupdateField'}
-                    }) }}
-                    {{ form_row(formAppointment.firstname,{
-                        label: 'Prénom',
-                        'attr':{'class': 'firstnameField form-control'}
-                    }) }}
-                    {{ form_row(formAppointment.lastname,{
-                        label: 'Nom',
-                        'attr':{'class': 'lastnameField form-control'}
-                    }) }}
-                    {{ form_row(formAppointment.postalAdress,{
-                            label: 'Adresse postale',
-                            'attr':{'class': 'postalAdressField form-control'}
-                        }) }}
-                    {{ form_row(formAppointment.postalCode,{
-                        label: 'Code postale',
-                        'attr':{'class': 'postalCodeField form-control'}
-                    }) }}
-                    {{ form_row(formAppointment.surface,{
-                        label: 'Surface',
-                        'attr':{'class': 'surfaceField form-control'}
-                    }) }}
-                    {{ form_row(formAppointment.mail,{
-                        label: 'Courriel',
-                        'attr':{'class': 'mailField form-control'}
-                    }) }}
-                    {{ form_row(formAppointment.phone,{
-                        label: 'Téléphone',
-                        'attr':{'class': 'phoneField form-control'}
-                    }) }}
-                    {{ form_row(formAppointment.callBackRequest,{
-                        label: 'Demande de rappel',
-                        'attr':{'class': 'callBackRequestField form-control'}
-                    }) }}
-                    {{ form_row(formAppointment.note,{
-                        label: 'Remarque',
-                        'attr':{'class': 'noteField form-control'}
-                    }) }}
-                {{ form_end(formAppointment) }}
-            </div>
+                {{ form_row(formAppointment.postalCode, {
+                    label: 'Code postale',
+                    'attr': { 'class': 'postalCodeField form-control' }
+                }) }}
+                {{ form_row(formAppointment.surface, {
+                    label: 'Surface',
+                    'attr': { 'class': 'surfaceField form-control' }
+                }) }}
+                {{ form_row(formAppointment.mail, {
+                    label: 'Courriel',
+                    'attr': { 'class': 'mailField form-control' }
+                }) }}
+                {{ form_row(formAppointment.phone, {
+                    label: 'Téléphone',
+                    'attr': { 'class': 'phoneField form-control' }
+                }) }}
+                {{ form_row(formAppointment.callBackRequest, {
+                    label: 'Demande de rappel',
+                    'attr': { 'class': 'callBackRequestField form-control' }
+                }) }}
+                {{ form_row(formAppointment.note, {
+                    label: 'Remarque',
+                    'attr': { 'class': 'noteField form-control' }
+                }) }}
+            {{ form_end(formAppointment) }}
+        </div>
     </body>
-
 {% endblock %}
