@@ -29,7 +29,7 @@
                                 <div class="width: 500px img-fluid">
                                     <img class="imageOperations" src="{{ asset('asset/img/'~prestation.imgPrestations[0].img.title) }}" alt="image d'opérations énergétiques">
                                 </div>
-                                <p>{{ prestation.imgPrestations[0].description }}</p>
+                                <p class="pPrestations">{{ prestation.imgPrestations[0].description }}</p>
                             </div>
 
                             <a class="btn btn-success" href="{{ path('prestation', { 'title': prestation.title }) }}">
@@ -44,9 +44,9 @@
                             <a class="btnUpdatePresta btn btn-success" href="{{ path('updatePresta', { 'title': prestation.title  }) }}">Modifier Prestation</a>
                             <button class="del btn btn-danger">Supprimer prestation</button>
                             <div class="modal">
-                                <p>Voulez-vous vraiment supprimer la prestation ?</p>
-                                <button class="cancel btn btn-primary" >Annuler</button>
-                                <a class="btn btn-danger" href="{{ path('removePresta', { 'title': prestation.title  }) }}">Supprimer</a>
+                                <p class="cadragePara1">Voulez-vous vraiment supprimer la prestation ?</p>
+                                <button class="cancel btn btn-primary cadrageButton1" >Annuler</button>
+                                <a class="btn btn-danger cadrageAlink1" href="{{ path('removePresta', { 'title': prestation.title  }) }}">Supprimer</a>
                             </div>
                         {% endif %}
                     </div>

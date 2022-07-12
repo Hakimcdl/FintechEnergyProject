@@ -4,36 +4,37 @@
 
 {% block body %}
 <body>
-    <h1>Modifier votre profil</h1>
+    <main>
+        <h1 class="m-5">Modifier votre profil</h1>
 
-    <span class="fieldUpdateOneProfile">
-        {{ form_start(editFormUser) }}
-            <div class="m-3">
-                {{ form_row(editFormUser.lastname, {
-                    label: 'Nom :',
-                    'attr': { 'class': 'oneProfilesNameField form-control' }
-                }) }}
-            </div>
-            <div class="m-3">
-                {{ form_row(editFormUser.email, {
-                    label: 'Courriel :',
-                    'attr': { 'class': 'OneProfilesEmailField form-control' }
-                }) }}
-            </div>
-            <div class="m-3">
-            {{ form_row(editFormUser.plainPassword, {
-                    label: 'Mot de passe :',
-                    'attr': { 'class': 'OneProfilesPasswordField form-control' }
-                }) }}
-            </div>
-            <div class="m-3">
-                {{ form_row(editFormUser.agreeTerms) }}
-            </div>
-            <div class="m-3">
-                <input type="submit" value="Envoyer">
-            </div>
-        {{ form_end(editFormUser) }}
-    </span>
-
+        <span class="fieldUpdateOneProfile">
+            {{ form_start(editFormUser) }}
+                <div class="m-3">
+                    {{ form_row(editFormUser.lastname, {
+                        label: 'Nom :',
+                        'attr': { 'class': 'oneProfilesNameField form-control' }
+                    }) }}
+                </div>
+                <div class="m-3">
+                    {{ form_row(editFormUser.email, {
+                        label: 'Courriel :',
+                        'attr': { 'class': 'OneProfilesEmailField form-control' }
+                    }) }}
+                </div>
+                <div class="m-3">
+                {{ form_row(editFormUser.plainPassword, {
+                        label: 'Mot de passe :',
+                        'attr': { 'class': 'OneProfilesPasswordField form-control' }
+                    }) }}
+                </div>
+                <div class="m-3">
+                    {{ form_row(editFormUser.agreeTerms) }}
+                </div>
+                <div class="m-3">
+                    <input type="submit" value="Envoyer">
+                </div>
+            {{ form_end(editFormUser) }}
+        </span>
+    </main>
 </body>
 {% endblock %}

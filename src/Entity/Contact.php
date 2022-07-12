@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\ContactRepository;
+
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ContactRepository;
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact
@@ -21,9 +22,6 @@ class Contact
 
     #[ORM\Column(type: 'integer')]
     private $phone;
-
-    #[ORM\Column(type: 'boolean')]
-    private $executed;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $firstname;
@@ -71,18 +69,6 @@ class Contact
     public function setPhone(int $phone): self
     {
         $this->phone = $phone;
-
-        return $this;
-    }
-
-    public function getExecuted(): ?bool
-    {
-        return $this->executed;
-    }
-
-    public function setExecuted(bool $executed): self
-    {
-        $this->executed = $executed;
 
         return $this;
     }

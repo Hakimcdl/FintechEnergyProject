@@ -253,8 +253,9 @@ article{
     flex-direction: revert;
     justify-content: center;
 }
-.rubriquePara h3{
+.rubriquePara h3 {
     color: #2F9116;
+    margin-bottom: 12%;
 }
 .deroulant{
     display: none;
@@ -266,23 +267,20 @@ article{
     -ms-transform: scale(1.5);
     transform: scale(1.5);
 }
-.rubriquePara{
+.rubriquePara {
+    text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 0 50px;
+    margin: 0 5%;
 }
-.para1{
+.para1 {
     display: flex;
-    flex-wrap: wrap;
     text-align: center;
-    margin: 100px auto;
+    /*margin: 100px auto;*/
     gap: 20px;
-}
-.para1 p {
-    min-width: 280px;
-    max-width: 320px;
+    justify-content: space-between;
 }
 
 /* style de PRESTATIONS PLURIEL CSS*/
@@ -327,7 +325,7 @@ main{
     justify-content: center;
     align-items: center;
 }
-.imageOperations{
+.imageOperations {
     width: 500px;
     margin: 15px;
     transition: transform .1s;
@@ -410,6 +408,21 @@ article {
     text-decoration: none;
     border: none;
 }
+.cadragePara1{
+    top: 18%;
+    position: absolute;
+    left: 18%;
+}
+.cadrageButton1{
+    left: 56%;
+    position: absolute;
+    top: 50%;
+}
+.cadrageAlink1{
+    position: absolute;
+    top: 50%;
+    left: 27%;
+}
 /* style de ADD DES PRESTATIONS ADMIN pour 1 PRESTATIONS CSS*/
 .formulaireAddPrestation{
     width: 500px;
@@ -461,7 +474,6 @@ article {
     font-size: 30px;
     font-weight: bold;
 }
-
 .isolation{
     width: 70%;
     margin: 50px auto;
@@ -557,6 +569,7 @@ article {
 }
 .prestationaccessupdateField{
     margin: 10px;
+    flex-wrap: wrap;
 }
 .residencyaccessupdate{
     margin: 10px;
@@ -640,11 +653,45 @@ main{
 .displayBlock{
     display: block!important;
 }
+.cadragePara{
+    top: 18%;
+    position: absolute;
+    left: 18%;
+}
+.cadrageButton{
+    left: 56%;
+    position: absolute;
+    top: 50%;
+}
+.cadrageAlink{
+    position: absolute;
+    top: 50%;
+    left: 27%;
+}
+
 /*style VIEW ONE PROFIL CSS*/
 .profilOneViewFormular{
-    width: 350px;
+    width: 450px;
     background-color: lightgrey;
     border: 5px solid red;
+}
+.cadrageP{
+    top: 18%;
+    position: absolute;
+    left: 18%;
+}
+.cadrageB{
+    left: 26%;
+    position: absolute;
+    top: 50%;
+}
+.cadrageA{
+    position: absolute;
+    top: 50%;
+}
+.mainOneProfil{
+    height: 76vh;
+    width: 100%;
 }
 /* style de CONTACT FORMULAIRE CSS*/
 .titleContact{
@@ -703,7 +750,7 @@ main{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 50px auto;
+    margin: 125px auto;
     padding: 30px 30px;
     border: 5px solid red;
     border-radius: 10px;
@@ -715,7 +762,7 @@ main{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 50px auto;
+    margin: 110px auto;
     padding: 30px 30px;
     border: 5px solid red;
     border-radius: 10px;
@@ -728,7 +775,7 @@ main{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 50px auto;
+    margin: 150px auto;
     padding: 30px 30px;
     border: 5px solid red;
     border-radius: 10px;
@@ -828,7 +875,6 @@ main{
     }
     .eachArticle{
         height: 320px;
-        border: #B0413E 1px solid;
         overflow: hidden;
         position: relative;
     }
@@ -925,6 +971,20 @@ main{
         display: flex;
         flex-wrap: wrap;
     }
+    .imageOperations{
+        width: 80%;
+    }
+    .pPrestations{
+        margin-bottom: 1rem;
+        padding: 4%;
+        font-size: 14px;
+        text-align: center;
+    }
+    .adminControl{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 /* style de PRESTATION SINGULIER CSS*/
@@ -940,7 +1000,6 @@ main{
         flex-direction: column;
         text-align: center;
     }
-
     .description:nth-child(2) {
         display: flex;
         flex-direction: column;
@@ -952,16 +1011,30 @@ main{
         align-items: center;
         text-align: center;
         font-size: 25px;
+        margin: 0 auto;
     }
     .description:nth-child(1){
         display: flex;
         flex-direction: column;
         text-align: center;
     }
+    .description:nth-child(1) img{
+        width: 80%;
+    }
+    .description:nth-child(1) p{
+        margin: 25px;
+        font-size: 15px;
+    }
     .description:nth-child(2){
         display: flex;
         flex-direction: column;
         text-align: center;
+    }
+    .description:nth-child(2) img{
+        width: 80%;
+    }
+    .description:nth-child(2) p{
+        margin: 15px;
     }
 }
 
@@ -992,12 +1065,15 @@ main{
     }
 }
 /*  RESPONSIVE VOTRE PROFIL VIEW ONE PROFIL*/
-@media screen and (max-width: 760px) { /* A REGLER LE RESPONSIVE EN GALAXY FOLD 280px EN COURS */
+@media screen and (max-width: 760px) { /* A CORRIGER LE RESPONSIVE EN GALAXY FOLD 280px EN COURS */
     .grandProfilOneViewFormular  {
         width: auto;
     }
 }
 @media screen and (max-width: 1280px) {
+    .mainOneProfil{
+        height: auto;
+    }
     .rubriqueProfile {
         align-items: center;
         text-align: center;
@@ -1095,6 +1171,16 @@ main{
         width: auto;
     }
 }
+/* style de AIDE RENOVATION CSS*/
+@media screen and (max-width: 1280px) {
+    .imgHelpRenov{
+        display: none;
+    }
+    .imgHelpRenov1{
+        width: auto;
+    }
+}
+
 /* style de FORMULAIRE REGISTER CSS*/
 @media screen and (max-width: 760px) {
 .fieldRegisterProfile {
@@ -1107,3 +1193,4 @@ main{
         width: auto;
     }
 }
+

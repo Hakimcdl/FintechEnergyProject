@@ -19,9 +19,9 @@
             {% endif %}
 
             <div class="modal">
-                <p>Voulez-vous vraiment supprimer cet utilisateur ?</p>
-                <button class="cancel btn btn-primary">Annuler</button>
-                <a href="{{ path('remove_user', { 'id':user.id } ) }}" class="deleteUser btn btn-danger">Supprimer</a>
+                <p class="cadragePara">Voulez-vous vraiment supprimer cet utilisateur ?</p>
+                <button class="cancel btn btn-primary cadrageButton">Annuler</button>
+                <a href="{{ path('remove_user', { 'id':user.id } ) }}" class="deleteUser btn btn-danger cadrageAlink">Supprimer</a>
             </div>
         </div>
     {% endfor %}

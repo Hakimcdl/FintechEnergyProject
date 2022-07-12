@@ -4,24 +4,26 @@
 
 {% block body %}
 {# ViewOneProfil institué dans HOME controller #}
-<h1 class="rubriqueProfile">Voici votre profil</h1>
-<div class="grandProfilOneViewFormular d-flex justify-content-center align-items-center p-5 m-5">
-    <div
-        class="profilOneViewFormular card d-flex flex-column justify-content-center align-items-center text-center p-3">
-        <p class="profilNameField fw-bolder">Votre nom : {{ user.lastname }}</p>
-        <p class="profilEmailField fw-bolder">Adresse email: {{ user.email }}</p>
+<main class="mainOneProfil">
+    <h1 class="rubriqueProfile">Voici votre profil</h1>
+    <div class="grandProfilOneViewFormular d-flex justify-content-center align-items-center p-5 m-5">
+        <div
+            class="profilOneViewFormular card d-flex flex-column justify-content-center align-items-center text-center p-3">
+            <p class="profilNameField fw-bolder">Votre nom : {{ user.lastname }}</p>
+            <p class="profilEmailField fw-bolder">Adresse email: {{ user.email }}</p>
 
-        <a class="btn btn-success" href="{{ path('updateProfil', { 'id': app.user.id }) }}">Modifier profil</a>
+            <a class="btn btn-success" href="{{ path('updateProfil', { 'id': app.user.id }) }}">Modifier profil</a>
 
-        <button  class="delete del btn btn-danger mt-3">Supprimer profil</button>
+            <button  class="delete del btn btn-danger mt-3">Supprimer profil</button>
 
-        <div class="modal">
-            <p>Voulez-vous vraiment supprimer votre profil ?</p>
-            <button class="cancel btn btn-primary">Annuler</button>
-            <a href="{{ path('remove_user_id', { 'id':user.id } ) }}" class="deleteUser btn btn-danger">Supprimer</a>
+            <div class="modal">
+                <p class="cadrageP">Voulez-vous vraiment supprimer votre profil ?</p>
+                <button class="cancel btn btn-primary cadrageB">Annuler</button>
+                <a  href="{{ path('remove_user_id', { 'id':user.id } ) }}" class="deleteUser btn btn-danger cadrageA ">Supprimer</a>
+            </div>
         </div>
     </div>
-</div>
+</main>
 {% endblock %}
 
 {% block javascripts %}

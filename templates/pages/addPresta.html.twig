@@ -4,61 +4,47 @@
 
 {% block body %}
 <body>
-    <h1>Ajouter une prestation</h1>
-    <span class="formulaireAddPrestation">
-        {{ form_start(formPrestation) }}
-            <div class="m-3">
-                {{ form_row(formPrestation.title, {
-                    label: 'Titre :',
-                    'attr': { 'class': 'addPrestationField form-control' }
-                }) }}
-            </div>
+        <h1>Ajouter une prestation</h1>
 
-            <div
-                id="email-fields-list"
-                data-prototype="{{ form_row(formPrestation.imgPrestations.vars.prototype)|escape }}"
-                data-index="{{ formPrestation.imgPrestations|length }}"
-            >
-                {% for imgPrestationField in formPrestation.imgPrestations %}
-                    <div class="m-3">
-                        {{ form_row(imgPrestationField.img, {
-                            label: 'Image :',
-                            'attr': {
-                                'class': 'addImageField form-control',
-                            }
-                        }) }}
-                    </div>
-                    <div class="m-3">
-                        {{ form_row(imgPrestationField.description, {
-                            label: 'Description :',
-                            'attr': {
-                                'class': 'addDescriptionField form-control',
-                            }
-                        }) }}
-                    </div>
-                {% endfor %}
-            </div>
+        <span class="formulaireAddPrestation">
+            {{ form_start(formPrestation) }}
+                <div class="m-3">
+                    {{ form_row(formPrestation.title, {
+                        label: 'Titre :',
+                        'attr': { 'class': 'addPrestationField form-control' }
+                    }) }}
+                </div>
+                {#  c'est un exemple de noc champ quo pourra adapter #}
+                <div id="prestation-fields-list" data-prototype="{{ form_row(formPrestation.imgPrestations.vars.prototype)|escape }}" data-index="{{ formPrestation.imgPrestations|length }}">
 
-            <button
-                type="button"
-                class="add-another-collection-widget"
-                data-list-selector="#email-fields-list"
-            >
-                Add another email
-            </button>
-        {{ form_end(formPrestation) }}
-    </span>
+                    {% for imgPrestationField in formPrestation.imgPrestations %}
+                        <div class="m-3">
+                            {{ form_row(imgPrestationField.img, {
+                                label: 'Image :',
+                                'attr': {'class': 'addImageField form-control',}
+                            }) }}
+                        </div>
+                        <div class="m-3">
+                            {{ form_row(imgPrestationField.description, {
+                                label: 'Description :',
+                                'attr': {'class': 'addDescriptionField form-control',}
+                            }) }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {{ form_end(formPrestation) }}
+        </span>
 </body>
 {% endblock %}
 
 {% block javascripts %}
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.add-another-collection-widget').click(function (e) {
-                e.preventDefault();
-
-                var list = $($(this).attr('data-list-selector'));
-
+            //sélectionne la classe " .class="add-another-collection-widget" (ligne 46)
+            function addPrestation() {
+                    //l'attribut par exemple 'data-list-selector se trouve dans le html,
+                var list = $('#prestation-fields-list'); // this on récupère l'attribut qu'il y a dans notre data list selector, cad le contenu de celui ci
+                    // donc ici on va sélectionner notre attribut data list selector cas le ID qui est déterminé par un DIEZE # soit email-fields-list qui correspond à la ligne 18
                 // Get the data-prototype explained earlier
                 var prototype = list.data('prototype');
                 // get the new index
@@ -69,8 +55,10 @@
                 // increase the index with one for the next item
                 list.data('index', index + 1);
                 // Display the form in the page before the "new" link
-                $(this).before(newForm);
-            });
+                list.after(newForm);
+            }
+            addPrestation();
+            addPrestation();
         });
     </script>
 {% endblock %}

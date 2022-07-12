@@ -1,42 +1,48 @@
 {% extends 'base.html.twig' %}
 {% block title %}Création profil{% endblock %}
 {% block body %}
+<main>
+        <h1 class="fw-bold m-5">Connectez-vous ou créer un compte</h1>
 
-<h1 class="fw-bold">Connectez-vous ou créer un compte</h1>
-<span class="d-flex justify-content-center">
-    <a class="btn btn-primary" href="{{ path('app_login') }}">Se connecter</a>
-</span>
+        <span class="d-flex flex-column justify-content-center">
+                <h2>Vous avez déjà un compte ?</h2>
+            <a class="btn btn-primary m-3" href="{{ path('app_login') }}">Se connecter</a>
+        </span>
 
-<span class="fieldRegisterProfile">
-    {{ form_start(registrationForm) }}
-        <div class="m-3">
-            {{ form_row(registrationForm.lastname, {
-                label: 'Nom :',
-                'attr': { 'class': 'registerNameField form-control' }
-            }) }}
-        </div>
+        <span class="fieldRegisterProfile">
+            {{ form_start(registrationForm) }}
+                <div class="m-3">
+                    {{ form_row(registrationForm.lastname, {
+                        label: 'Nom :',
+                        'attr': { 'class': 'registerNameField form-control' }
+                    }) }}
+                </div>
 
-        <div class="m-3">
-            {{ form_row(registrationForm.email, {
-                label: 'Courriel :',
-                'attr': { 'class': 'registerEmailField form-control' }
-            }) }}
-        </div>
+                <div class="m-3">
+                    {{ form_row(registrationForm.email, {
+                        label: 'Courriel :',
+                        'attr': { 'class': 'registerEmailField form-control' }
+                    }) }}
+                </div>
 
-        <div class="m-3">
-            {{ form_row(registrationForm.plainPassword, {
-                label: 'Mot de passe :',
-                'attr': { 'class': 'registerPasswordField form-control' }
-            }) }}
-        </div>
+                <div class="m-3">
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Mot de passe :',
+                        'attr': { 'class': 'registerPasswordField form-control' }
+                    }) }}
+                </div>
 
-        <div class="m-3">
-            {{ form_row(registrationForm.agreeTerms) }}
-        </div>
+                <div class="m-3">
+                    {{ form_row(registrationForm.agreeTerms, {
+                            label: 'Accepter les conditions',
+                            'attr': { 'class': 'agreeTermsField' }
+                    }) }}
+                </div>
 
-        <div class="m-3">
-            <button type="submit" class="btn btn-lg btn-primary">Inscription</button>
-        </div>
-    {{ form_end(registrationForm) }}
-</span>
+                <div class="m-3">
+                    <button type="submit" class="btn btn-lg btn-primary">Inscription</button>
+                </div>
+            {{ form_end(registrationForm) }}
+        </span>
+</main>
 {% endblock %}
