@@ -42,9 +42,6 @@ class Appointment
     #[ORM\Column(type: 'date')]
     private $callBackRequest;
 
-    #[ORM\Column(type: 'boolean', nullable: true)]
-    private $entreprise;
-
     #[ORM\Column(type: 'string', length: 255)]
     private $note;
 
@@ -178,18 +175,6 @@ class Appointment
     public function setCallBackRequest(\DateTimeInterface $callBackRequest): self
     {
         $this->callBackRequest = $callBackRequest;
-
-        return $this;
-    }
-
-    public function getEntreprise(): ?bool
-    {
-        return $this->entreprise;
-    }
-
-    public function setEntreprise(bool $entreprise): self
-    {
-        $this->entreprise = $entreprise;
 
         return $this;
     }

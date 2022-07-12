@@ -43,7 +43,6 @@ class ProAppointmentType extends AbstractType
                 'html5'=>false,
                 'attr'=>['autocomplete'=>'off', 'value'=>(new \DateTime())->format('d/m/Y')]
             ])
-            ->add('entreprise')
             ->add('note')
             ->add('envoyer', SubmitType::class)
         ;

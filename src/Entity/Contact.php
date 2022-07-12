@@ -20,7 +20,7 @@ class Contact
     #[ORM\Column(type: 'string', length: 255)]
     private $message;
 
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'string')]
     private $phone;
 
     #[ORM\Column(type: 'string', length: 255)]
@@ -61,12 +61,12 @@ class Contact
         return $this;
     }
 
-    public function getPhone(): ?int
+    public function getPhone(): ?string
     {
         return $this->phone;
     }
 
-    public function setPhone(int $phone): self
+    public function setPhone(string $phone): self
     {
         $this->phone = $phone;
 
