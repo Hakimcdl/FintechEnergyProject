@@ -284,13 +284,6 @@ article{
 }
 
 /* style de PRESTATIONS PLURIEL CSS*/
-main{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
 .rubriquePrestations{
     width: 80%;
     height: 100px;
@@ -436,7 +429,7 @@ article {
 }
 /* style de UPDATE DES PRESTATIONS ADMIN pour 1 PRESTATIONS CSS*/
 .formulaireUpdatePrestation{
-    width: 500px;
+    width: auto;
     display: flex;
     justify-content: center;
     margin: 50px auto;
@@ -444,6 +437,10 @@ article {
     background-color: lightgrey;
     border: 5px solid red;
     border-radius: 10px;
+}
+.updateDescriptionField{
+    width: 100%;
+    height: 200px;
 }
 
 /* style de PRESTATION SINGULIER CSS*/
@@ -552,8 +549,9 @@ article {
     text-align: center;
     margin: 50px;
 }
+
 .formularAppointment{
-    width: 50%;
+    width: 75%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -567,9 +565,25 @@ article {
     background-repeat: no-repeat;
     background-size: cover;
 }
+/*----BOITE FORMULAIRE MISE EN FORME EN COURS */
+/*----GROSSE BOITE-----*/
+#part_appointment_prestationaccessupdate {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin: 2%;
+    font-size: 15px;
+}
+.prestationaccessupdateField {
+}
+/*-liste deroulant --*/
+.residencyaccessupdateField{
+}
 .prestationaccessupdateField{
-    margin: 10px;
-    flex-wrap: wrap;
+     color: red;
+}
+#idpart_appointment_prestationaccessupdate_6{
+    background-color: blue;
 }
 .residencyaccessupdate{
     margin: 10px;
@@ -577,6 +591,10 @@ article {
 .firstnameField{
     margin: 10px;
     border-radius:25px;
+}
+.required{
+    margin-top: 20px;
+    font-size: 18px;
 }
 .lastnameField{
     margin: 10px;
@@ -648,6 +666,7 @@ main{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    min-height: 80vh;
     align-items: center;
 }
 .displayBlock{
@@ -775,7 +794,7 @@ main{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 150px auto;
+    margin: 175px auto;
     padding: 30px 30px;
     border: 5px solid red;
     border-radius: 10px;
@@ -853,12 +872,12 @@ main{
         text-align: center;
     }
     h2{
-        font-size: 10px;
+        font-size: 15px;
         text-align: center;
     }
     h3{
-        margin: 10px auto;
         font-size: 16px;
+        margin: 10px auto;
     }
     .presentation {
         margin: 0px auto;
@@ -1049,6 +1068,9 @@ main{
     .formulaireUpdatePrestation {
         width: auto;
     }
+    .updateDescriptionField{
+        width: 100%;
+    }
 }
 
 /*  RESPONSIVE PROFILES ADMIN HANDLER */
@@ -1177,10 +1199,31 @@ main{
         display: none;
     }
     .imgHelpRenov1{
-        width: auto;
+        width: 446px!important;
+    }
+    .titleResponsive{
+        margin: 15px auto!important;
     }
 }
-
+@media screen and (max-width: 760px) {
+    .tableFinance{
+        display: none!important;
+    }
+    .titleResponsive{
+        margin: 13px auto!important;
+    }
+}
+@media screen and (max-width: 460px) {
+    .imgHelpRenov{
+        display: none;
+    }
+    .imgHelpRenov1{
+        width:360px!important;
+    }
+    .titleResponsive{
+        margin: 10px auto!important;
+    }
+}
 /* style de FORMULAIRE REGISTER CSS*/
 @media screen and (max-width: 760px) {
 .fieldRegisterProfile {
@@ -1193,4 +1236,3 @@ main{
         width: auto;
     }
 }
-
