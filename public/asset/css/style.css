@@ -424,7 +424,7 @@ article {
     margin: 50px auto;
     padding: 30px 30px;
     background-color: lightgrey;
-    border: 5px solid red;
+    border: 5px solid black;
     border-radius: 10px;
 }
 /* style de UPDATE DES PRESTATIONS ADMIN pour 1 PRESTATIONS CSS*/
@@ -435,12 +435,27 @@ article {
     margin: 50px auto;
     padding: 30px 30px;
     background-color: lightgrey;
-    border: 5px solid red;
+    border: 5px solid black;
     border-radius: 10px;
 }
 .updateDescriptionField{
     width: 100%;
     height: 200px;
+}
+#prestation_Valider{
+    color: #fff;
+    background-color: #0d6efd;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding: 0.5%;
 }
 
 /* style de PRESTATION SINGULIER CSS*/
@@ -559,9 +574,10 @@ article {
     text-align: center;
     margin: 50px auto;
     padding: 30px 30px;
-    border: 5px solid red;
+    border: 5px solid black;
     border-radius: 10px;
-    background-image: url(../img/img_fond/greennature.jpg);
+    background-color: #ECF5F7;
+    background-image: url(../img/img_fond/kisspng-poster-banner-country-travel.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -570,20 +586,25 @@ article {
 #part_appointment_prestationaccessupdate {
     display: flex;
     justify-content: space-between;
+    /*font-weight: bold;*/
+    margin: 2%;
+    font-size: 15px;
+}
+#pro_appointment_prestationaccessupdate {
+    display: flex;
+    justify-content: space-between;
     font-weight: bold;
     margin: 2%;
     font-size: 15px;
 }
-.prestationaccessupdateField {
-}
-/*-liste deroulant --*/
+/*-liste déroulant Habitation--*/
 .residencyaccessupdateField{
+    margin-bottom: 2%;
 }
 .prestationaccessupdateField{
-     color: red;
 }
-#idpart_appointment_prestationaccessupdate_6{
-    background-color: blue;
+.prestationaccessupdate{
+    margin: 10px;
 }
 .residencyaccessupdate{
     margin: 10px;
@@ -636,7 +657,36 @@ article {
     margin: 10px;
     border-radius:25px;
 }
-
+#part_appointment_envoyer{
+    color: #fff;
+    background-color: #0d6efd;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding: 0.5%;
+}
+#pro_appointment_envoyer{
+    color: #fff;
+    background-color: #0d6efd;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding: 0.5%;
+}
 /* style de PROFILES ADMIN HANDLER  CSS*/
 
 .rubriqueProfiles{
@@ -656,7 +706,7 @@ article {
     flex-direction: column;
     align-items: center;
     background-color: lightgrey;
-    border: 5px solid red;
+    border: 5px solid black;
     padding: 20px;
     margin: 50px;
     position: relative;
@@ -692,7 +742,7 @@ main{
 .profilOneViewFormular{
     width: 450px;
     background-color: lightgrey;
-    border: 5px solid red;
+    border: 5px solid black;
 }
 .cadrageP{
     top: 18%;
@@ -719,10 +769,11 @@ main{
 .contact{
     display: flex;
     justify-content: center;
-    border: 5px solid red;
+    border: 5px solid black;
     border-radius: 10px;
     margin: 50px 200px;
-    background-image: url(../img/img_fond/greennature.jpg);
+    background-color: #ECF5F7;
+    background-image: url(../img/img_fond/kisspng-poster-banner-country-travel.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -731,9 +782,12 @@ main{
     justify-content: right;
     margin: 50px 150px;
     padding: 30px 30px;
-    border: 5px solid red;
+    background-color: #ECF5F7;
+    border: 5px solid black;
     border-radius: 10px;
-    background-image: url(../img/img_fond/greennature.jpg);
+    background-image: url(../img/img_fond/kisspng-poster-banner-country-travel.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .googleMap{
     width: 100%;
@@ -771,7 +825,7 @@ main{
     flex-direction: column;
     margin: 125px auto;
     padding: 30px 30px;
-    border: 5px solid red;
+    border: 5px solid black;
     border-radius: 10px;
     background-color: lightgrey;
 }
@@ -783,7 +837,7 @@ main{
     flex-direction: column;
     margin: 110px auto;
     padding: 30px 30px;
-    border: 5px solid red;
+    border: 5px solid black;
     border-radius: 10px;
     background-color: lightgrey;
 }
@@ -796,7 +850,7 @@ main{
     flex-direction: column;
     margin: 175px auto;
     padding: 30px 30px;
-    border: 5px solid red;
+    border: 5px solid black;
     border-radius: 10px;
     background-color: lightgrey;
 }
@@ -808,7 +862,7 @@ main{
     flex-direction: column;
     margin: 50px auto;
     padding: 30px 30px;
-    border: 5px solid red;
+    border: 5px solid black;
     border-radius: 10px;
     background-color: lightgrey;
 }
@@ -1236,3 +1290,4 @@ main{
         width: auto;
     }
 }
+
