@@ -28,7 +28,10 @@
                     }) }}
                 </div>
                 <div class="m-3">
-                    {{ form_row(editFormUser.agreeTerms) }}
+                    {{ form_row(editFormUser.agreeTerms,{
+                        label: 'Accepter les conditions',
+                        'attr': { 'class': 'OneProfilesAgreeTermsField' }
+                    }) }}
                 </div>
                 <div class="m-3">
                     <input class="btn-primary" type="submit" value="Envoyer">

@@ -32,14 +32,14 @@
                     }) }}
                 </div>
 
-                <div class="m-3">
+                <div class="m-3 d-flex justify-content-center">
                     {{ form_row(registrationForm.agreeTerms, {
                             label: 'Accepter les conditions',
-                            'attr': { 'class': 'agreeTermsField' }
+                            'attr': { 'class': 'registerAgreeTermsField' }
                     }) }}
                 </div>
 
-                <div class="m-3">
+                <div class="m-3 d-flex justify-content-center">
                     <button type="submit" class="btn btn-lg btn-primary">Inscription</button>
                 </div>
             {{ form_end(registrationForm) }}

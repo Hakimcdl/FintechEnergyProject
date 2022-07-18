@@ -282,7 +282,11 @@ article{
     gap: 20px;
     justify-content: space-between;
 }
-
+.carousel img{
+    height: 500px;
+    object-fit: contain;
+    background: white;
+}
 /* style de PRESTATIONS PLURIEL CSS*/
 .rubriquePrestations{
     width: 80%;
@@ -768,6 +772,10 @@ main{
     height: 76vh;
     width: 100%;
 }
+/*  Modifier 1 profile sur son profile CSS*/
+input.OneProfilesAgreeTermsField{
+    margin-left: 15px;
+}
 /* style de CONTACT FORMULAIRE CSS*/
 .titleContact{
     font-weight: bold;
@@ -834,6 +842,10 @@ main{
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     padding: 0.5%;
 }
+div > #contact_formular_envoyer{  /* En cours de modification*/
+    display: flex;
+    justify-content: center;
+}
 /* style de UPDATE ALL PROFILES FORMULAIRE CSS*/
 .formulaireUpdateAllProfiles{
     width: 500px;
@@ -849,6 +861,10 @@ main{
     border: 5px solid black;
     border-radius: 10px;
     background-color: lightgrey;
+}
+/*  Modifier tout les profiles EN ADMIN pour 1 profile CSS*/
+input.allProfilesAgreeTermsField{
+    margin-left: 15px;
 }
 /* style de UPDATE ONE PROFILE FORMULAIRE CSS*/
 .fieldUpdateOneProfile{
@@ -887,6 +903,10 @@ main{
     border-radius: 10px;
     background-color: lightgrey;
 }
+input.registerAgreeTermsField{
+    margin-left: 15px;
+}
+
 #scroll_to_top {
     position: fixed;
     width: 25px;
@@ -953,6 +973,11 @@ main{
     h3{
         font-size: 16px;
         margin: 10px auto;
+    }
+    .carousel img{
+        height: 200px;
+        object-fit: contain;
+        background: white;
     }
     .presentation {
         margin: 0px auto;
@@ -1081,7 +1106,7 @@ main{
     }
 }
 
-/* style de PRESTATION SINGULIER CSS*/
+/* RESPONSIVE style de PRESTATION SINGULIER CSS*/
 
 @media screen and (max-width: 1280px) {
     .rubriquePrestation{
