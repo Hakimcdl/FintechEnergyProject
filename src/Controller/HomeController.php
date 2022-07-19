@@ -55,12 +55,12 @@ class HomeController extends AbstractController
     {
         // $this va chercher la fonction get user par son id ou va récupérer le roles de l'admin
         $connectedUserId = $this->getUser() ? $this->getUser()->getId() : null;
-        // Cela récupère les id de touts les membres grace a la table user
+        // Cela récupère les id de touts les membres grâce à la table user
         $userRemove = $userRepository->findOneBy(['id' => $id]);
 
         if ($connectedUserId === $id) {
-            // token storage c'est à l'intérieur de ceci que les infos de l'utilisateur sont stocké
-            //dd($tokenStorage->getToken()); si on mets pas nul il va aller chercher les données de l'utilisateur dans la BDD alors que nous il existe plus
+            // token storage c'est à l'intérieur de ceci que les infos de l'utilisateur sont stockés
+            //dd($tokenStorage->getToken()); si on mets pas NULL il va aller chercher les données de l'utilisateur dans la BDD alors que nous il existe plus
             // alors qu'on veut le supprimer d'où ligne 65 et 66 on force la déconnexion avec set token NULL et on le déconnecte avec invalidate (soit le supprimer)
             $tokenStorage->setToken(null);
             $request->getSession()->invalidate();

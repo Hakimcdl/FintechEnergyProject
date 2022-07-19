@@ -76,11 +76,10 @@
         <h2 class="fw-bold">Notre métier, nos prestations :</h2>
         <div class="ourPrestation">
             {% for prestation in prestations %}
-            <article class="card allcards">
+            <article class="card allcards"><a class="text-decoration-none" href="{{ path('prestation', { 'title': prestation.title }) }}">
                 <h3>{{ prestation.title }}</h3>
-                <span><a href="{{ path('prestation', { 'title': prestation.title }) }}">
-                            <img src="{{ asset('asset/img/img_article/vertmaison.png') }}" alt="icons"></a></span>
-            </article>
+                <span><img src="{{ asset('asset/img/img_article/vertmaison.png') }}" alt="icons"></span>
+                </a></article>
             {% endfor %}
         </div>
     </section>
