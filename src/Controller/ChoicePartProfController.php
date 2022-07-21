@@ -38,11 +38,10 @@ class ChoicePartProfController extends AbstractController
         if ($formAppointment->isSubmitted() && $formAppointment->isValid()) {
             $appointment->setRequestDate($dateNow)
                         ->setActive(true);
-            $appointmentRepository->add($appointment);
 
             $prestas = $appointment->getPrestationaccessupdate();
             foreach ($prestas as $presta) {
-                ;
+
                 $appointment->addPrestationaccessupdate($presta);
             }
             $appointmentRepository->add($appointment);
@@ -52,7 +51,7 @@ class ChoicePartProfController extends AbstractController
                 'status' => $FormulaireStatus
             ]);
         }
-        if ($formType === PartAppointmentType::class) {
+        if ($FormulaireStatus === 'particulier') {
             return $this->render('formular/formularAppointmentPart.html.twig', [
                 'formAppointment' => $formAppointment->createView(),
                 'status' => $FormulaireStatus

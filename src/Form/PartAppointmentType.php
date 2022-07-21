@@ -8,9 +8,13 @@ use App\Entity\Residency;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Regex;
 use function Sodium\add;
 
 class PartAppointmentType extends AbstractType
@@ -33,8 +37,16 @@ class PartAppointmentType extends AbstractType
             ->add('postalAdress')
             ->add('postalCode')
             ->add('surface')
-            ->add('mail')
-            ->add('phone')
+            ->add('mail',  EmailType::class, [
+                'constraints' => [
+                    new Email()
+                ]
+            ])
+            ->add('phone', TextType::class, [
+                'constraints' => [
+                    new Regex('/^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/')
+                ]
+            ])
             ->add('callBackRequest', DateType::class, [
                 'widget'=>'single_text',
                 'format'=>'dd/MM/yyyy',
