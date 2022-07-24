@@ -46,7 +46,7 @@ class PrestationsAdminController extends AbstractController
         ]);
     }
 
-    #[Route('/supprimer/{title}', name: 'removePresta', methods: ['GET', 'POST'])]
+    #[Route('/supprimer/{title}', name: 'removePresta')]
     public function removePresta(PrestationRepository $prestationRepository, $title)
     {
         $deletePresta = $prestationRepository->findOneBy(['title' => $title]);
