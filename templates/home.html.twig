@@ -18,22 +18,22 @@
             </div>
             <div class="carousel-inner bg-secondary my-5">
                 <div class="carousel-item active py-auto">
-                    <img src="asset/img/img_fond/bandeau-sur-renovation.jpg" class="d-block w-100" alt="image scroller energy renovation">
+                    <img src="asset/img/img_fond/bandeau-sur-renovation.jpg" class="d-block w-100" alt="présentation rénovation énergétique">
                 </div>
                 <div class="carousel-item py-auto">
-                    <img src="asset/img/img_fond/Rénovation_énergétique_des_bâtiments.jpg" class="d-block w-100" alt="image scroller energy renovation">
+                    <img src="asset/img/img_fond/Rénovation_énergétique_des_bâtiments.jpg" class="d-block w-100" alt="jusqu'a 10 000 euros d'aide">
                 </div>
                 <div class="carousel-item py-auto">
-                    <img src="asset/img/img_fond/energy-stats.jpg" class="d-block w-100" alt="image scroller energy renovation">
+                    <img src="asset/img/img_fond/energy-stats.jpg" class="d-block w-100" alt="shéma maison isolation en pourcentage">
                 </div>
                 <div class="carousel-item py-auto">
-                    <img src="asset/img/img_fond/bandeau_renovationenergetique.jpg" class="d-block w-100" alt="image scroller energy renovation">
+                    <img src="asset/img/img_fond/bandeau_renovationenergetique.jpg" class="d-block w-100" alt="pourcentage amélioration énergétique">
                 </div>
                 <div class="carousel-item py-auto">
-                    <img src="asset/img/img_fond/bandeau_maison-bbc.jpg" class="d-block w-100" alt="image scroller energy renovation">
+                    <img src="asset/img/img_fond/bandeau_maison-bbc.jpg" class="d-block w-100" alt="shéma structure maison">
                 </div>
                 <div class="carousel-item py-auto">
-                    <img src="asset/img/img_fond/paysage_greenhouse.jpg" class="d-block w-100" alt="image scroller energy renovation">
+                    <img src="asset/img/img_fond/paysage_greenhouse.jpg" class="d-block w-100" alt="image paysage urbain vert">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -78,7 +78,7 @@
             {% for prestation in prestations %}
             <article class="card allcards"><a class="text-decoration-none" href="{{ path('prestation', { 'title': prestation.title }) }}">
                 <h3>{{ prestation.title }}</h3>
-                <span><img src="{{ asset('asset/img/img_article/vertmaison.png') }}" alt="icons"></span>
+                <span><img src="{{ asset('asset/img/img_article/vertmaison.png') }}" alt="icons maison verte"></span>
                 </a></article>
             {% endfor %}
         </div>
@@ -104,7 +104,7 @@
         </div>
         <article class="eachArticle articleFirst col-12">
             <div>
-                <span><img class="imageHome" src="{{ asset('asset/img/img_article/accompagnement-de-projet.png') }}" alt=""></span>
+                <span><img class="imageHome" src="{{ asset('asset/img/img_article/accompagnement-de-projet.png') }}" alt="jardin suspendu immeuble"></span>
             </div>
             <div class="rubriquePara">
                 <h3>INDIVIDUALITÉS ET INTÉRÊT COLLECTIF</h3>
@@ -132,14 +132,14 @@
                 </div>
             </div>
             <div>
-                <span><img class="imageHome" src="{{ asset('asset/img/img_article/2-systeme-de-stockage.png') }}" alt=""></span>
+                <span><img class="imageHome" src="{{ asset('asset/img/img_article/2-systeme-de-stockage.png') }}" alt="éolienne"></span>
             </div>
             <span class="deroulant"><i class="fa-solid fa-arrow-down"></i></span>
         </article>
 
         <article class="eachArticle articleFirst col-12">
             <div>
-                <span><img class="imageHome" src="{{ asset('asset/img/img_article/3-monitoring-gestion.png') }}" alt=""></span>
+                <span><img class="imageHome" src="{{ asset('asset/img/img_article/3-monitoring-gestion.png') }}" alt="ordinateur portable"></span>
             </div>
             <div class="rubriquePara">
                 <h3>ENVIRONNEMENT ET ÉNERGIES</h3>
@@ -169,7 +169,7 @@
             </div>
             <span class="deroulant"><i class="fa-solid fa-arrow-down"></i></span>
             <div>
-                <span><img class="imageHome" src="{{ asset('asset/img/img_article/4-offres-dhebergement-de-data.png') }}" alt=""></span>
+                <span><img class="imageHome" src="{{ asset('asset/img/img_article/4-offres-dhebergement-de-data.png') }}" alt="flux de données"></span>
             </div>
         </article>
     </section>
